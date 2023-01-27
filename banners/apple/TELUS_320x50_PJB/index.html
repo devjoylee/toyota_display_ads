@@ -1,0 +1,234 @@
+<!-- override global script --><!-- /override global script -->
+<html lang="en">
+  <head>
+    <style>
+      .copy1-1,
+      .copy1-2,
+      .copy1-3,
+      .copy2,
+      .logo {
+        background-image: url(assets/spritesheets/copy.png);
+        background-position: 0 0;
+        width: 320px;
+        height: 50px;
+        background-size: 320px 250px;
+      }
+      .copy1-2,
+      .copy1-3,
+      .copy2,
+      .logo {
+        background-position: 0 -50px;
+      }
+      .copy1-3,
+      .copy2,
+      .logo {
+        background-position: 0 -100px;
+      }
+      .copy2,
+      .logo {
+        background-position: 0 -150px;
+      }
+      .logo {
+        background-position: 0 -200px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #ad {
+        display: block;
+        border: 1px solid #000;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+      }
+      .ad-element {
+        position: absolute !important;
+        background-repeat: no-repeat;
+      }
+      .retina-image {
+        display: inline-block;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+      }
+      .retina-image img {
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+      }
+      #ad,
+      #background,
+      #banner {
+        width: 320px;
+        height: 50px;
+      }
+      #banner {
+        position: absolute;
+        overflow: hidden;
+        background-color: #ccc;
+        visibility: hidden;
+        left: -1px;
+        top: -1px;
+      }
+      #background {
+        background-image: url(assets/background.jpg);
+        background-size: 100%;
+      }
+    </style>
+    <meta name="ad.size" content="width=320,height=50" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
+    <script>
+      var clickTag = ''
+      var clickarea
+
+      var domReady = function (callback) {
+        document.readyState === 'interactive' || document.readyState === 'complete'
+          ? callback()
+          : document.addEventListener('DOMContentLoaded', callback)
+      }
+
+      domReady(function () {
+        clickarea = document.querySelector('#banner')
+        clickarea.addEventListener('click', exit)
+      })
+
+      function exit() {
+        window.open(clickTag, '_blank')
+      }
+    </script>
+  </head>
+  <body>
+    <div id="ad">
+      <!-- main -->
+      <div id="banner">
+        <div id="background" class="ad-element"></div>
+        <div class="ad-element copy1 copy1-1"></div>
+        <div class="ad-element copy1 copy1-2"></div>
+        <div class="ad-element copy1 copy1-3"></div>
+        <div class="ad-element copy2"></div>
+        <div class="ad-element logo"></div>
+      </div>
+      <!-- /main -->
+    </div>
+    <script>
+      !(function (e) {
+        function t(n) {
+          if (o[n]) return o[n].exports
+          var r = (o[n] = { i: n, l: !1, exports: {} })
+          return e[n].call(r.exports, r, r.exports, t), (r.l = !0), r.exports
+        }
+        var o = {}
+        ;(t.m = e),
+          (t.c = o),
+          (t.d = function (e, o, n) {
+            t.o(e, o) || Object.defineProperty(e, o, { enumerable: !0, get: n })
+          }),
+          (t.r = function (e) {
+            'undefined' != typeof Symbol &&
+              Symbol.toStringTag &&
+              Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
+              Object.defineProperty(e, '__esModule', { value: !0 })
+          }),
+          (t.t = function (e, o) {
+            if ((1 & o && (e = t(e)), 8 & o)) return e
+            if (4 & o && 'object' == typeof e && e && e.__esModule) return e
+            var n = Object.create(null)
+            if (
+              (t.r(n),
+              Object.defineProperty(n, 'default', { enumerable: !0, value: e }),
+              2 & o && 'string' != typeof e)
+            )
+              for (var r in e)
+                t.d(
+                  n,
+                  r,
+                  function (t) {
+                    return e[t]
+                  }.bind(null, r)
+                )
+            return n
+          }),
+          (t.n = function (e) {
+            var o =
+              e && e.__esModule
+                ? function () {
+                    return e.default
+                  }
+                : function () {
+                    return e
+                  }
+            return t.d(o, 'a', o), o
+          }),
+          (t.o = function (e, t) {
+            return Object.prototype.hasOwnProperty.call(e, t)
+          }),
+          (t.p = ''),
+          t((t.s = 3))
+      })([
+        function (e, t, o) {
+          'use strict'
+          Object.defineProperty(t, '__esModule', { value: !0 }),
+            (t.default = function (e, t, o) {
+              var n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : 0,
+                r = arguments.length > 4 && void 0 !== arguments[4] && arguments[4],
+                a = document.querySelector(e),
+                i = a.clientHeight * t
+              gsap.to(a, {
+                duration: o,
+                backgroundPosition: '0px -' + i + 'px',
+                ease: 'steps(' + t + ')',
+                repeat: n,
+                yoyo: r,
+              })
+            })
+        },
+        ,
+        ,
+        function (e, t, o) {
+          'use strict'
+          var n
+          ;(n = o(0)) && n.__esModule,
+            (function () {
+              function e() {
+                gsap.to('#cta', { duration: 0.25, backgroundColor: '#ffffff', ease: 'none' }),
+                  gsap.to('.cta-label-on', { duration: 0.25, alpha: 1 })
+              }
+              function t() {
+                gsap.to('#cta', { duration: 0.25, backgroundColor: '#008800', ease: 'none' }),
+                  gsap.to('.cta-label-on', { duration: 0.25, alpha: 0 })
+              }
+              var o = document.querySelector('#ad'),
+                n = document.querySelector('#banner'),
+                r = {}
+              window.onload = function () {
+                var a
+                ;(r.width = n.offsetWidth),
+                  (r.height = n.offsetHeight),
+                  (n.style.visibility = 'visible'),
+                  o.addEventListener('mouseover', e),
+                  o.addEventListener('mouseout', t),
+                  (a = gsap.timeline()),
+                  gsap.set('.copy1-1', { transformOrigin: '52px 50%' }),
+                  gsap.set('.copy1-2', { transformOrigin: '133px 50%' }),
+                  gsap.set('.copy1-3', { transformOrigin: '198px 50%' }),
+                  a
+                    .to('.copy1-1', { duration: 0.25, scale: 1.15, repeat: 1, yoyo: !0 })
+                    .to('.copy1-2', { duration: 0.25, scale: 1.15, repeat: 1, yoyo: !0 }, '-=.1')
+                    .to('.copy1-3', { duration: 0.25, scale: 1.15, repeat: 1, yoyo: !0 }, '-=.1')
+                    .to('.copy1', { alpha: 0 }, '+=1.5')
+                    .from(['.copy2', '.snipe'], { alpha: 0 })
+              }
+            })()
+        },
+      ])
+    </script>
+  </body>
+</html>

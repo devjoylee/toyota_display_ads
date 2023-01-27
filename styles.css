@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 38px;
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+  margin-left: 20px;
+}
+
+section {
+  width: 190px;
+  margin-right: 25px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+dl {
+  margin: 20px 0 0 30px;
+  margin-bottom: 15px;
+}
+
+dt {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+dd {
+  font-size: 17px;
+}

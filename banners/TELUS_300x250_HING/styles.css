@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  caret-color: transparent;
+}
+
+#ad {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  width: 300px;
+  height: 250px;
+  position: relative;
+  border: 1px solid #000;
+  position: relative;
+}
+
+#banner,
+.frame {
+  width: 100%;
+  height: 100%;
+}
+
+#banner *:not(.frame, .cta-bg) {
+  position: absolute;
+  background-image: url(assets/sprites.png);
+}
+
+.frame {
+  position: absolute;
+}
+
+/* ----- FRAME ----- */
+.frame1 {
+  background-image: url(assets/background1.png);
+}
+
+.frame2 {
+  background-image: url(assets/background2.png);
+}
+
+.frame3 {
+  background-color: #f4f4f7;
+}
+
+.frame1 *,
+.frame2 .txt,
+.frame3 *,
+.cta-bg {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.frame1 .txt {
+  width: 265px;
+  height: 45px;
+  top: 50px;
+  background-position: 0 0;
+}
+
+.frame1 .img {
+  width: 150px;
+  height: 145px;
+  bottom: 0;
+  background-position: -600px 0;
+}
+
+.frame2 .txt {
+  width: 255px;
+  height: 50px;
+  top: 60px;
+  background-position: 0 -70px;
+}
+
+.frame2 .img {
+  height: 120px;
+  bottom: 10px;
+}
+
+.frame2 .img1 {
+  width: 70px;
+  left: 20px;
+  background-position: -270px -130px;
+}
+
+.frame2 .img2 {
+  width: 160px;
+  left: 63px;
+  background-position: -340px -130px;
+}
+
+.frame2 .img3 {
+  width: 90px;
+  left: 195px;
+  background-position: -500px -130px;
+}
+
+.frame3 .txt {
+  width: 220px;
+  height: 30px;
+  top: 50px;
+  background-position: 0 -130px;
+}
+
+.frame3 .img {
+  width: 245px;
+  height: 130px;
+  bottom: 35px;
+  background-position: -270px 0;
+}
+
+/* ----- CTA Button ----- */
+.cta-bg {
+  position: relative;
+  top: 86%;
+  width: 78px;
+  height: 20px;
+  border-radius: 10px;
+  background: #468424;
+  border: 1px solid #468424;
+  transition: background 0.35s ease-in-out;
+  display: none;
+  opacity: 0;
+}
+
+.cta {
+  width: 55px;
+  height: 12px;
+  position: absolute;
+  left: 52%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hover-off {
+  background-position: 0 -227px;
+}
+
+.hover-on {
+  opacity: 0;
+  background-position: 0 -215px;
+}
+
+#banner:hover .cta-bg {
+  background: #fff;
+}
+
+#banner:hover .hover-off {
+  opacity: 0;
+}
+
+#banner:hover .hover-on {
+  opacity: 1;
+}
+
+.legal {
+  width: 65px;
+  height: 8px;
+  left: 5px;
+  bottom: 5px;
+  background-position: 0 -242px;
+}
+
+/* ----- LOGO ----- */
+.logo {
+  width: 100px;
+  height: 19px;
+  top: 10px;
+  right: 12px;
+}
+
+.logo-color {
+  opacity: 0;
+  z-index: 20;
+  background-position: -60px -185px;
+}
+
+.logo-white {
+  background-position: -60px -220px;
+}

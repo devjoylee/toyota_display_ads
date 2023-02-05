@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="ad.size" content="width=300,height=250" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
+    <script>
+      var clickTag = ''
+    </script>
+    <title>TELUS_300x250_SC</title>
+  </head>
+  <body>
+    <div id="ad">
+      <div id="banner">
+        <div class="frame frame1">
+          <span class="txt"></span>
+          <span class="img"></span>
+        </div>
+        <div class="frame frame2">
+          <span class="txt"></span>
+          <span class="img img1"></span>
+          <span class="img img2"></span>
+          <span class="img img3"></span>
+        </div>
+        <div class="frame frame3">
+          <span class="txt"></span>
+          <span class="img"></span>
+        </div>
+        <div class="cta-bg">
+          <span class="cta hover-off"></span>
+          <span class="cta hover-on"></span>
+        </div>
+        <span class="logo logo-color"></span>
+        <span class="logo logo-white"></span>
+        <span class="legal"></span>
+      </div>
+    </div>
+    <script>
+      const timeline = gsap.timeline({
+        defaults: { duration: 0.5, ease: 'none' },
+        repeat: 1,
+        repeatDelay: 3,
+      })
+      timeline
+        .from('.frame1 .img', { y: 100, opacity: 0 })
+        .from('.frame1 .txt', { y: -10, opacity: 0 })
+        .from('.frame2', { opacity: 0, delay: 1.5 })
+        .from('.frame2 .txt', { y: -8, opacity: 0 })
+        .from('.frame2 .img', { opacity: 0, stagger: 0.2 })
+        .from('.frame3', { opacity: 0, delay: 1.5 })
+        .to('.logo-color', { opacity: 1 }, '<')
+        .from('.frame3 .img', { y: -8, opacity: 0 })
+        .from('.frame3 .txt', { y: -8, opacity: 0 })
+        .from('.legal', { opacity: 0 }, '<')
+        .to('.cta-bg', { display: 'block', opacity: 1 })
+
+      // exit and link to banner
+      document.querySelector('#banner').addEventListener('click', exit)
+      function exit() {
+        window.open(clickTag)
+      }
+    </script>
+  </body>
+</html>

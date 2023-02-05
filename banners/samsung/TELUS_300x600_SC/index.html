@@ -5,31 +5,71 @@
       .copy1-1,
       .copy1-2,
       .copy1-3,
-      .copy2,
-      .logo {
+      .copy2-1,
+      .copy2-2,
+      .cta-label-off {
         background-image: url(assets/spritesheets/copy.png);
-        background-position: 27px -5px;
-        width: 320px;
-        height: 50px;
-        background-size: 320px 250px;
+        background-position: 0 0;
+        width: 288px;
+        height: 600px;
+        background-size: 1270px 1200px;
       }
       .copy1-2,
       .copy1-3,
-      .copy2,
-      .logo {
-        background-position: 20px -48px;
+      .copy2-1,
+      .copy2-2,
+      .cta-label-off {
+        background-position: -300px 0;
       }
       .copy1-3,
-      .copy2,
-      .logo {
-        background-position: 0 -100px;
+      .copy2-1,
+      .copy2-2,
+      .cta-label-off {
+        background-position: -600px 0;
       }
-      .copy2,
+      .copy2-1,
+      .copy2-2,
+      .cta-label-off {
+        background-position: -912px 0;
+      }
+      .copy2-2,
+      .cta-label-off {
+        background-position: 36px -600px;
+      }
+      .cta-label-off {
+        background-position: -1193px -1px;
+        width: 70px;
+        height: 14.5px;
+      }
+      .cta-label-on {
+        background-position: -1195px -16.5px;
+        width: 70px;
+        height: 14.5px;
+      }
+      .cta-label-on,
+      .device,
+      .legal {
+        background-image: url(assets/spritesheets/copy.png);
+        background-size: 1270px 1200px;
+      }
+      .device {
+        width: 300px;
+        height: 600px;
+        background-position: -300px -600px;
+      }
+      .legal {
+        background-position: -600px -600px;
+      }
+      #ad,
+      .legal,
       .logo {
-        background-position: 0 -150px;
+        width: 300px;
+        height: 600px;
       }
       .logo {
-        background-position: 0 -200px;
+        background-image: url(assets/spritesheets/copy.png);
+        background-position: -900px -600px;
+        background-size: 1270px 1200px;
       }
       * {
         box-sizing: border-box;
@@ -38,14 +78,17 @@
         margin: 0;
         padding: 0;
       }
+      #ad,
+      #cta {
+        cursor: pointer;
+      }
       #ad {
         display: block;
-        border: 1px solid #000;
         overflow: hidden;
         position: absolute;
         left: 0;
         top: 0;
-        cursor: pointer;
+        border: 1px solid #000;
       }
       .ad-element {
         position: absolute !important;
@@ -62,11 +105,30 @@
         height: auto;
         pointer-events: none;
       }
-      #ad,
+      #cta {
+        border: #248700 1px solid;
+        background-color: #248700;
+        border-radius: 500px;
+        transition: 0.25s background-color;
+        color: #fff;
+        padding: 0.415em 1.15em;
+        font-size: 12px;
+        white-space: nowrap;
+        line-height: 1em;
+        letter-spacing: 0.005em;
+      }
+      #cta:empty {
+        display: none;
+      }
+      #cta:focus,
+      #cta:hover {
+        background-color: #fff;
+        color: #248700;
+      }
       #background,
       #banner {
-        width: 320px;
-        height: 50px;
+        width: 300px;
+        height: 600px;
       }
       #banner {
         position: absolute;
@@ -80,8 +142,31 @@
         background-image: url(assets/background.jpg);
         background-size: 100%;
       }
+      #cta,
+      #cta .cta-label-off,
+      #cta .cta-label-on {
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        left: 50%;
+      }
+      #cta {
+        width: 102px;
+        height: 30px;
+        top: 530px;
+      }
+      #cta .cta-label-off,
+      #cta .cta-label-on {
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+      }
+      #cta .cta-label-on {
+        opacity: 0;
+      }
     </style>
-    <meta name="ad.size" content="width=320,height=50" />
+    <meta name="ad.size" content="width=300,height=600" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
@@ -113,7 +198,14 @@
         <div class="ad-element copy1 copy1-1"></div>
         <div class="ad-element copy1 copy1-2"></div>
         <div class="ad-element copy1 copy1-3"></div>
-        <div class="ad-element copy2"></div>
+        <div class="ad-element device"></div>
+        <div class="ad-element copy2 copy2-1"></div>
+        <div class="ad-element copy2 copy2-2"></div>
+        <div class="ad-element legal"></div>
+        <div id="cta" class="ad-element">
+          <div class="ad-element cta-label-off"></div>
+          <div class="ad-element cta-label-on"></div>
+        </div>
         <div class="ad-element logo"></div>
       </div>
       <!-- /main -->
@@ -171,7 +263,7 @@
             return Object.prototype.hasOwnProperty.call(e, t)
           }),
           (t.p = ''),
-          t((t.s = 3))
+          t((t.s = 2))
       })([
         function (e, t, o) {
           'use strict'
@@ -190,7 +282,6 @@
               })
             })
         },
-        ,
         ,
         function (e, t, o) {
           'use strict'
@@ -216,15 +307,20 @@
                   o.addEventListener('mouseover', e),
                   o.addEventListener('mouseout', t),
                   (a = gsap.timeline()),
-                  gsap.set('.copy1-1', { transformOrigin: '52px 50%' }),
-                  gsap.set('.copy1-2', { transformOrigin: '133px 50%' }),
-                  gsap.set('.copy1-3', { transformOrigin: '198px 50%' }),
+                  gsap.set('.copy1-1', { transformOrigin: '50% 162px' }),
+                  gsap.set('.copy1-2', { transformOrigin: '50% 224px' }),
+                  gsap.set('.copy1-3', { transformOrigin: '50% 298px' }),
+                  gsap.set('.copy2-1', { transformOrigin: '50% 100px' }),
                   a
                     .to('.copy1-1', { duration: 0.25, scale: 1.15, repeat: 1, yoyo: !0 })
                     .to('.copy1-2', { duration: 0.25, scale: 1.15, repeat: 1, yoyo: !0 }, '-=.1')
                     .to('.copy1-3', { duration: 0.25, scale: 1.15, repeat: 1, yoyo: !0 }, '-=.1')
                     .to('.copy1', { alpha: 0 }, '+=1.5')
-                    .from(['.copy2', '.snipe'], { alpha: 0 })
+                    .from(['.device', '.copy2'], { y: '+=' + r.height })
+                    .to('.copy2-1', { duration: 0.25, scale: 1.1, repeat: 1, yoyo: !0 })
+                    .from('.legal', { alpha: 0 })
+                    .from('#cta', { alpha: 0 }, '+=1')
+                    .to('.copy2-1', { duration: 0.25, scale: 1.1, repeat: 1, yoyo: !0 })
               }
             })()
         },

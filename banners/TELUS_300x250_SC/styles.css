@@ -113,6 +113,24 @@ body {
   background-position: -200px 0;
 }
 
+/* ----- LOGO ----- */
+.logo {
+  width: 100px;
+  height: 30px;
+  top: 10px;
+  right: 12px;
+}
+
+.logo-color {
+  opacity: 0;
+  z-index: 20;
+  background-position: -60px -185px;
+}
+
+.logo-white {
+  background-position: -60px -220px;
+}
+
 /* ----- CTA Button ----- */
 .cta-bg {
   position: relative;
@@ -162,23 +180,6 @@ body {
   height: 9px;
   left: 5px;
   bottom: 5px;
-  background-position: 0 -242px;
-}
-
-/* ----- LOGO ----- */
-.logo {
-  width: 100px;
-  height: 30px;
-  top: 10px;
-  right: 12px;
-}
-
-.logo-color {
   opacity: 0;
-  z-index: 20;
-  background-position: -60px -185px;
-}
-
-.logo-white {
-  background-position: -60px -220px;
+  background-position: 0 -242px;
 }

@@ -16,26 +16,28 @@
     <div id="ad">
       <div id="banner">
         <div class="frame frame1">
-          <span class="txt"></span>
-          <span class="img"></span>
+          <img src="assets/svg/txt1.svg" class="svg txt" />
+          <img src="assets/img/phone.png" class="img" />
         </div>
         <div class="frame frame2">
-          <span class="txt"></span>
-          <span class="img img1"></span>
-          <span class="img img2"></span>
-          <span class="img img3"></span>
+          <img src="assets/svg/txt2.svg" class="svg txt" />
+          <img src="assets/img/device1.png" class="img" />
+          <img src="assets/img/device2.png" class="img" />
+          <img src="assets/img/device3.png" class="img" />
         </div>
         <div class="frame frame3">
-          <span class="txt"></span>
-          <span class="img"></span>
+          <img src="assets/svg/txt3.svg" class="svg txt" />
+          <img src="assets/svg/price.svg" class="svg price" />
+          <img src="assets/img/tiger.png" class="img" />
         </div>
-        <div class="cta-bg">
-          <span class="cta hover-off"></span>
-          <span class="cta hover-on"></span>
+        <div class="cta">
+          <div class="cta-bg"></div>
+          <img src="assets/svg/cta-off.svg" class="svg cta-off" />
+          <img src="assets/svg/cta-on.svg" class="svg cta-on" />
         </div>
-        <span class="logo logo-color"></span>
-        <span class="logo logo-white"></span>
-        <span class="legal"></span>
+        <img src="assets/svg/logo-color.svg" class="svg logo logo-color" />
+        <img src="assets/svg/logo-white.svg" class="svg logo logo-white" />
+        <img src="assets/svg/legal.svg" class="svg legal" />
       </div>
     </div>
     <script>
@@ -53,9 +55,10 @@
         .from('.frame3', { opacity: 0, delay: 1.5 })
         .to('.logo-color', { opacity: 1 }, '<')
         .from('.frame3 .img', { y: -8, opacity: 0 })
+        .from('.frame3 .price', { y: -8, opacity: 0 }, '<')
         .from('.frame3 .txt', { y: -8, opacity: 0 })
         .to('.legal', { opacity: 1 }, '<')
-        .to('.cta-bg', { display: 'block', opacity: 1 })
+        .to('.cta', { display: 'block', opacity: 1 })
 
       // exit and link to banner
       document.querySelector('#banner').addEventListener('click', exit)

@@ -1,70 +1,147 @@
-<!DOCTYPE html>
+<!-- override global script --><!-- /override global script -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="ad.size" content="width=300,height=250" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
-    <script>
-      var clickTag = ''
-    </script>
     <title>TELUS_300x250_TC</title>
+    <script>
+      var clickTag = '';
+      var clickarea;
+
+      var domReady = function (callback) {
+        document.readyState === 'interactive' || document.readyState === 'complete'
+          ? callback()
+          : document.addEventListener('DOMContentLoaded', callback);
+      };
+
+      domReady(function () {
+        clickarea = document.querySelector('#banner');
+        clickarea.addEventListener('click', exit);
+      });
+
+      function exit() {
+        window.open(clickTag, '_blank');
+      }
+    </script>
   </head>
   <body>
     <div id="ad">
+      <!-- main -->
       <div id="banner">
-        <div class="frame frame1">
-          <img src="assets/svg/txt1.svg" class="svg txt" />
-          <img src="assets/img/phone.png" class="img" />
+        <div id="background" class="ad-element"></div>
+        <div class="ad-element logo"></div>
+        <div class="ad-element copy1"></div>
+        <svg id="svg" class="ad-element" width="100%" height="100%">
+          <defs>
+            <mask id="mask"><rect id="maskRect" width="100%" height="100%" fill="#ffffff" /></mask>
+          </defs>
+          <g mask="url(#mask)">
+            <rect width="100%" height="100%" fill="#000000" />
+            <image href="assets/copy2.png" width="100%" height="100%" />
+          </g>
+        </svg>
+        <div class="ad-element critter"></div>
+        <div class="ad-element copy3"></div>
+        <div class="ad-element device"></div>
+        <div id="cta" class="ad-element">
+          <div class="ad-element cta-label-off"></div>
+          <div class="ad-element cta-label-on"></div>
         </div>
-        <div class="frame frame2">
-          <img src="assets/svg/txt2.svg" class="svg txt" />
-          <img src="assets/img/device1.png" class="img" />
-          <img src="assets/img/device2.png" class="img" />
-          <img src="assets/img/device3.png" class="img" />
-        </div>
-        <div class="frame frame3">
-          <img src="assets/svg/txt3.svg" class="svg txt" />
-          <img src="assets/svg/price.svg" class="svg price" />
-          <img src="assets/img/tiger.png" class="img" />
-        </div>
-        <div class="cta">
-          <div class="cta-bg"></div>
-          <img src="assets/svg/cta-off.svg" class="svg cta-off" />
-          <img src="assets/svg/cta-on.svg" class="svg cta-on" />
-        </div>
-        <img src="assets/svg/logo-color.svg" class="svg logo logo-color" />
-        <img src="assets/svg/logo-white.svg" class="svg logo logo-white" />
-        <img src="assets/svg/legal.svg" class="svg legal" />
       </div>
+      <!-- /main -->
     </div>
     <script>
-      const timeline = gsap.timeline({
-        defaults: { duration: 0.5, ease: 'none' },
-        repeat: 1,
-        repeatDelay: 3,
-      })
-      timeline
-        .from('.frame1 .img', { y: 100, opacity: 0 })
-        .from('.frame1 .txt', { y: -10, opacity: 0 })
-        .from('.frame2', { opacity: 0, delay: 2 })
-        .from('.frame2 .txt', { y: -8, opacity: 0 })
-        .from('.frame2 .img', { opacity: 0, stagger: 0.2 })
-        .from('.frame3', { opacity: 0, delay: 2 })
-        .to('.logo-color', { opacity: 1 }, '<')
-        .from('.frame3 .img', { y: -8, opacity: 0 })
-        .from('.frame3 .price', { y: -8, opacity: 0 }, '<')
-        .from('.frame3 .txt', { y: -8, opacity: 0 })
-        .to('.legal', { opacity: 1 }, '<')
-        .to('.cta', { display: 'block', opacity: 1 })
-
-      // exit and link to banner
-      document.querySelector('#banner').addEventListener('click', exit)
-      function exit() {
-        window.open(clickTag)
-      }
+      !(function (e) {
+        function t(o) {
+          if (n[o]) return n[o].exports;
+          var r = (n[o] = { i: o, l: !1, exports: {} });
+          return e[o].call(r.exports, r, r.exports, t), (r.l = !0), r.exports;
+        }
+        var n = {};
+        (t.m = e),
+          (t.c = n),
+          (t.d = function (e, n, o) {
+            t.o(e, n) || Object.defineProperty(e, n, { enumerable: !0, get: o });
+          }),
+          (t.r = function (e) {
+            'undefined' != typeof Symbol &&
+              Symbol.toStringTag &&
+              Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
+              Object.defineProperty(e, '__esModule', { value: !0 });
+          }),
+          (t.t = function (e, n) {
+            if ((1 & n && (e = t(e)), 8 & n)) return e;
+            if (4 & n && 'object' == typeof e && e && e.__esModule) return e;
+            var o = Object.create(null);
+            if (
+              (t.r(o),
+              Object.defineProperty(o, 'default', { enumerable: !0, value: e }),
+              2 & n && 'string' != typeof e)
+            )
+              for (var r in e)
+                t.d(
+                  o,
+                  r,
+                  function (t) {
+                    return e[t];
+                  }.bind(null, r)
+                );
+            return o;
+          }),
+          (t.n = function (e) {
+            var n =
+              e && e.__esModule
+                ? function () {
+                    return e.default;
+                  }
+                : function () {
+                    return e;
+                  };
+            return t.d(n, 'a', n), n;
+          }),
+          (t.o = function (e, t) {
+            return Object.prototype.hasOwnProperty.call(e, t);
+          }),
+          (t.p = ''),
+          t((t.s = 1));
+      })([
+        ,
+        function (e, t, n) {
+          'use strict';
+          !(function () {
+            function e() {
+              gsap.to('#cta', { duration: 0.25, backgroundColor: '#ffffff', ease: 'none' }),
+                gsap.to('.cta-label-on', { duration: 0.25, alpha: 1 });
+            }
+            function t() {
+              gsap.to('#cta', { duration: 0.25, backgroundColor: '#008800', ease: 'none' }),
+                gsap.to('.cta-label-on', { duration: 0.25, alpha: 0 });
+            }
+            var n = document.querySelector('#ad'),
+              o = document.querySelector('#banner'),
+              r = {};
+            window.onload = function () {
+              var a;
+              (r.width = o.offsetWidth),
+                (r.height = o.offsetHeight),
+                (o.style.visibility = 'visible'),
+                n.addEventListener('mouseover', e),
+                n.addEventListener('mouseout', t),
+                (a = gsap.timeline()),
+                gsap.set('#maskRect', { scaleX: 0, transformOrigin: 'right center' }),
+                a
+                  .to('#maskRect', { scaleX: 1 }, '+=2')
+                  .to(['.copy1', '.copy2', '.critter', '#svg'], { alpha: 0 }, '+=1.5')
+                  .from(['.copy3', '.device'], { alpha: 0 })
+                  .from('#cta', { alpha: 0 }, '+=1');
+            };
+          })();
+        },
+      ]);
     </script>
   </body>
 </html>

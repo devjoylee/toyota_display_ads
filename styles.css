@@ -40,11 +40,11 @@ footer p {
 }
 
 .container {
-  max-width: 640px;
+  max-width: 860px;
   margin: 0 auto;
-  padding: 70px 20px 50px;
+  padding: 100px 20px 50px;
   display: grid;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px 200px;
   grid-gap: 20px;
 }
 
@@ -58,7 +58,8 @@ footer p {
 }
 
 .item:hover {
-  transform: scale(1.05);
+  margin: -5px;
+  padding: 25px 40px;
 }
 
 dt {
@@ -91,6 +92,9 @@ dd {
   }
   .item {
     padding: 20px 15px;
+  }
+  .item:hover {
+    padding: 25px 20px;
   }
   dt {
     font-size: 18px;

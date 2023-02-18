@@ -8,8 +8,8 @@
   background-image: url(assets/sprites.png);
   background-position: 0 0;
   width: 300px;
-  height: 250px;
-  background-size: 900px 500px;
+  height: 600px;
+  background-size: 1200px 1200px;
 }
 .copy3,
 .critter,
@@ -24,29 +24,29 @@
 .cta-label-on,
 .device,
 .logo {
-  background-position: 0 -250px;
+  background-position: -600px 0;
 }
 .cta-label-off,
 .cta-label-on,
 .device,
 .logo {
-  background-position: -600px -250px;
-  width: 62.5px;
-  height: 9px;
+  background-position: -300px -600px;
+  width: 66px;
+  height: 12px;
 }
 .cta-label-on,
 .device,
 .logo {
-  background-position: -662.5px -250px;
+  background-position: -366px -600px;
 }
 .device,
 .logo {
-  background-position: -300px -250px;
+  background-position: -900px 0;
   width: 300px;
-  height: 250px;
+  height: 600px;
 }
 .logo {
-  background-position: -600px 0;
+  background-position: 0 -600px;
 }
 * {
   box-sizing: border-box;
@@ -69,7 +69,7 @@ body {
   left: 0;
   top: 0;
   width: 300px;
-  height: 250px;
+  height: 600px;
   border: 1px solid #000;
 }
 .ad-element {
@@ -109,7 +109,7 @@ body {
 #background,
 #banner {
   width: 300px;
-  height: 250px;
+  height: 600px;
 }
 #banner {
   position: absolute;
@@ -122,19 +122,22 @@ body {
 #background {
   background-color: #f7f7f7;
 }
-#cta {
-  width: 93px;
-  height: 20px;
-  left: 42px;
-  top: 206px;
-}
+#cta,
 #cta .cta-label-off,
 #cta .cta-label-on {
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
+  left: 50%;
+}
+#cta {
+  width: 100px;
+  height: 22px;
+  top: 294px;
+}
+#cta .cta-label-off,
+#cta .cta-label-on {
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);

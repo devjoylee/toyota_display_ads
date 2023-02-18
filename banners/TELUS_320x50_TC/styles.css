@@ -1,0 +1,65 @@
+.copy1,
+.copy3 {
+  background-image: url(assets/sprites.png);
+  background-size: 320px 150px;
+}
+.copy1 {
+  width: 320px;
+  height: 50px;
+  background-position: 0 0;
+}
+.copy3 {
+  background-position: 0 -50px;
+}
+#ad,
+#banner,
+.copy3,
+.logo {
+  width: 320px;
+  height: 50px;
+}
+.logo {
+  background-image: url(assets/sprites.png);
+  background-position: 0 -100px;
+  background-size: 320px 150px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#ad,
+#banner {
+  position: absolute;
+  overflow: hidden;
+}
+#ad {
+  display: block;
+  border: 1px solid #000;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+}
+.ad-element {
+  position: absolute;
+  background-repeat: no-repeat;
+}
+.retina-image {
+  display: inline-block;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.retina-image img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+#banner {
+  background-color: #f4f4f7;
+  visibility: hidden;
+  left: -1px;
+  top: -1px;
+}

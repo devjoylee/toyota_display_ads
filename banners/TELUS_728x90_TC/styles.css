@@ -7,9 +7,9 @@
 .logo {
   background-image: url(assets/sprites.png);
   background-position: 0 0;
-  width: 300px;
-  height: 250px;
-  background-size: 900px 500px;
+  width: 728px;
+  height: 90px;
+  background-size: 728px 461px;
 }
 .copy3,
 .critter,
@@ -17,36 +17,36 @@
 .cta-label-on,
 .device,
 .logo {
-  background-position: -300px 0;
+  background-position: 0 -90px;
 }
 .critter,
 .cta-label-off,
 .cta-label-on,
 .device,
 .logo {
-  background-position: 0 -250px;
+  background-position: 0 -180px;
 }
 .cta-label-off,
 .cta-label-on,
 .device,
 .logo {
-  background-position: -600px -250px;
-  width: 62.5px;
-  height: 9px;
+  background-position: 0 -449px;
+  width: 66px;
+  height: 12px;
 }
 .cta-label-on,
 .device,
 .logo {
-  background-position: -662.5px -250px;
+  background-position: -66px -449px;
 }
 .device,
 .logo {
-  background-position: -300px -250px;
-  width: 300px;
-  height: 250px;
+  background-position: 0 -270px;
+  width: 728px;
+  height: 90px;
 }
 .logo {
-  background-position: -600px 0;
+  background-position: 0 -360px;
 }
 * {
   box-sizing: border-box;
@@ -68,8 +68,8 @@ body {
   overflow: hidden;
   left: 0;
   top: 0;
-  width: 300px;
-  height: 250px;
+  width: 728px;
+  height: 90px;
   border: 1px solid #000;
 }
 .ad-element {
@@ -108,8 +108,8 @@ body {
 }
 #background,
 #banner {
-  width: 300px;
-  height: 250px;
+  width: 728px;
+  height: 90px;
 }
 #banner {
   position: absolute;
@@ -120,13 +120,13 @@ body {
   top: -1px;
 }
 #background {
-  background-color: #f7f7f7;
+  background-color: #f4f4f7;
 }
 #cta {
-  width: 93px;
-  height: 20px;
-  left: 42px;
-  top: 206px;
+  right: 17px;
+  bottom: 11px;
+  width: 100px;
+  height: 22px;
 }
 #cta .cta-label-off,
 #cta .cta-label-on {

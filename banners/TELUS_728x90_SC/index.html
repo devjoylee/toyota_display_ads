@@ -1,13 +1,12 @@
 <!-- override global script --><!-- /override global script -->
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="ad.size" content="width=300,height=250" />
+    <meta name="ad.size" content="width=728,height=90" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
-    <title>TELUS_300x250_PUNJ</title>
+    <title>TELUS_728x90_SC</title>
     <script>
       var clickTag = '';
       var clickarea;
@@ -107,10 +106,9 @@
             return Object.prototype.hasOwnProperty.call(e, t);
           }),
           (t.p = ''),
-          t((t.s = 1));
-      })([
-        ,
-        function (e, t, n) {
+          t((t.s = 4));
+      })({
+        4: function (e, t, n) {
           'use strict';
           !(function () {
             function e() {
@@ -134,14 +132,14 @@
                 (a = gsap.timeline()),
                 gsap.set('#maskRect', { scaleX: 0, transformOrigin: 'right center' }),
                 a
-                  .to('#maskRect', { scaleX: 1 }, '+=2')
+                  .to('#maskRect', { duration: 1, scaleX: 1 }, '+=2')
                   .to(['.copy1', '.copy2', '.critter', '#svg'], { alpha: 0 }, '+=1.5')
                   .from(['.copy3', '.device'], { alpha: 0 })
                   .from('#cta', { alpha: 0 }, '+=1');
             };
           })();
         },
-      ]);
+      });
     </script>
   </body>
 </html>

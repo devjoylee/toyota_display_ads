@@ -1,13 +1,12 @@
 <!-- override global script --><!-- /override global script -->
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="ad.size" content="width=300,height=250" />
+    <meta name="ad.size" content="width=320,height=50" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
-    <title>TELUS_300x250_PUNJ</title>
+    <title>TELUS_320x50_SC</title>
     <script>
       var clickTag = '';
       var clickarea;
@@ -32,7 +31,6 @@
     <div id="ad">
       <!-- main -->
       <div id="banner">
-        <div id="background" class="ad-element"></div>
         <div class="ad-element logo"></div>
         <div class="ad-element copy1"></div>
         <svg id="svg" class="ad-element" width="100%" height="100%">
@@ -44,28 +42,22 @@
             <image href="assets/text-mask.png" width="100%" height="100%" />
           </g>
         </svg>
-        <div class="ad-element critter"></div>
         <div class="ad-element copy3"></div>
-        <div class="ad-element device"></div>
-        <div id="cta" class="ad-element">
-          <div class="ad-element cta-label-off"></div>
-          <div class="ad-element cta-label-on"></div>
-        </div>
       </div>
       <!-- /main -->
     </div>
     <script>
       !(function (e) {
-        function t(o) {
-          if (n[o]) return n[o].exports;
-          var r = (n[o] = { i: o, l: !1, exports: {} });
-          return e[o].call(r.exports, r, r.exports, t), (r.l = !0), r.exports;
+        function t(n) {
+          if (r[n]) return r[n].exports;
+          var o = (r[n] = { i: n, l: !1, exports: {} });
+          return e[n].call(o.exports, o, o.exports, t), (o.l = !0), o.exports;
         }
-        var n = {};
+        var r = {};
         (t.m = e),
-          (t.c = n),
-          (t.d = function (e, n, o) {
-            t.o(e, n) || Object.defineProperty(e, n, { enumerable: !0, get: o });
+          (t.c = r),
+          (t.d = function (e, r, n) {
+            t.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: n });
           }),
           (t.r = function (e) {
             'undefined' != typeof Symbol &&
@@ -73,27 +65,27 @@
               Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
               Object.defineProperty(e, '__esModule', { value: !0 });
           }),
-          (t.t = function (e, n) {
-            if ((1 & n && (e = t(e)), 8 & n)) return e;
-            if (4 & n && 'object' == typeof e && e && e.__esModule) return e;
-            var o = Object.create(null);
+          (t.t = function (e, r) {
+            if ((1 & r && (e = t(e)), 8 & r)) return e;
+            if (4 & r && 'object' == typeof e && e && e.__esModule) return e;
+            var n = Object.create(null);
             if (
-              (t.r(o),
-              Object.defineProperty(o, 'default', { enumerable: !0, value: e }),
-              2 & n && 'string' != typeof e)
+              (t.r(n),
+              Object.defineProperty(n, 'default', { enumerable: !0, value: e }),
+              2 & r && 'string' != typeof e)
             )
-              for (var r in e)
+              for (var o in e)
                 t.d(
+                  n,
                   o,
-                  r,
                   function (t) {
                     return e[t];
-                  }.bind(null, r)
+                  }.bind(null, o)
                 );
-            return o;
+            return n;
           }),
           (t.n = function (e) {
-            var n =
+            var r =
               e && e.__esModule
                 ? function () {
                     return e.default;
@@ -101,47 +93,35 @@
                 : function () {
                     return e;
                   };
-            return t.d(n, 'a', n), n;
+            return t.d(r, 'a', r), r;
           }),
           (t.o = function (e, t) {
             return Object.prototype.hasOwnProperty.call(e, t);
           }),
           (t.p = ''),
-          t((t.s = 1));
-      })([
-        ,
-        function (e, t, n) {
+          t((t.s = 3));
+      })({
+        3: function (e, t, r) {
           'use strict';
           !(function () {
-            function e() {
-              gsap.to('#cta', { duration: 0.25, backgroundColor: '#ffffff', ease: 'none' }),
-                gsap.to('.cta-label-on', { duration: 0.25, alpha: 1 });
-            }
-            function t() {
-              gsap.to('#cta', { duration: 0.25, backgroundColor: '#008800', ease: 'none' }),
-                gsap.to('.cta-label-on', { duration: 0.25, alpha: 0 });
-            }
-            var n = document.querySelector('#ad'),
-              o = document.querySelector('#banner'),
-              r = {};
+            document.querySelector('#ad');
+            var e = document.querySelector('#banner'),
+              t = {};
             window.onload = function () {
-              var a;
-              (r.width = o.offsetWidth),
-                (r.height = o.offsetHeight),
-                (o.style.visibility = 'visible'),
-                n.addEventListener('mouseover', e),
-                n.addEventListener('mouseout', t),
-                (a = gsap.timeline()),
+              var r;
+              (t.width = e.offsetWidth),
+                (t.height = e.offsetHeight),
+                (e.style.visibility = 'visible'),
+                (r = gsap.timeline()),
                 gsap.set('#maskRect', { scaleX: 0, transformOrigin: 'right center' }),
-                a
-                  .to('#maskRect', { scaleX: 1 }, '+=2')
-                  .to(['.copy1', '.copy2', '.critter', '#svg'], { alpha: 0 }, '+=1.5')
-                  .from(['.copy3', '.device'], { alpha: 0 })
-                  .from('#cta', { alpha: 0 }, '+=1');
+                r
+                  .to('#maskRect', { scaleX: 1 }, '+=1.5')
+                  .to(['.copy1', '.copy2', '#svg'], { alpha: 0 }, '+=1')
+                  .from('.copy3', { alpha: 0 });
             };
           })();
         },
-      ]);
+      });
     </script>
   </body>
 </html>

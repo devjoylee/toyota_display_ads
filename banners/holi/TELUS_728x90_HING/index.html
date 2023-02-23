@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="ad.size" content="width=300,height=250" />
+    <meta name="ad.size" content="width=728,height=90" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
@@ -10,7 +10,7 @@
     <script>
       var clickTag = '';
     </script>
-    <title>TELUS_300x250_PUNJ (holi)</title>
+    <title>TELUS_728x90_HING (holi)</title>
   </head>
   <body>
     <div id="ad">
@@ -20,9 +20,7 @@
         <img src="assets/img/splash2.png" class="splash right" />
 
         <div class="overlay">
-          <div class="textbox">
-            <div class="gradient-mask"></div>
-          </div>
+          <div class="textbox"></div>
         </div>
 
         <div class="frame frame1">
@@ -49,23 +47,27 @@
       const timeline = gsap.timeline({
         defaults: {},
         repeat: 1,
-        repeatDelay: 3,
+        repeatDelay: 3.5,
       });
 
       timeline
-        .fromTo('.leaf', 0.6, { x: 160 }, { x: 0 })
-        .from('.txt1', { scale: 0, ease: 'back.out', stagger: 0.15 }, '<')
+        .from('.leaf', { y: 70, ease: 'none' })
+        .from(
+          '.txt1',
+          { scale: 0, ease: 'back.out', x: -100, stagger: 0.15 },
+          '<'
+        )
         .from(
           '.txt2',
-          { scale: 0, ease: 'back.out', x: -65, y: 30, stagger: 0.15 },
+          { scale: 0, ease: 'back.out', x: 150, y: 10, stagger: 0.15 },
           '-=0.35'
         )
-        .to('.gradient-mask', { x: '-=' + 2 * ad.offsetWidth, delay: 3.5 })
-        .to('.frame1', { duration: 0.01, alpha: 0 })
-        .from('.frame2', { duration: 0.01, alpha: 0 })
-        .to('.gradient-mask', { x: 0, ease: 'power1.in' })
-        .to('.leaf', { x: 160, repeat: 1, yoyo: true, ease: 'none' }, '-=1')
-        .to('.cta', { display: 'block', opacity: 1 });
+        .to('.txt1', { opacity: 0, delay: 3 })
+        .to('.txt2', { opacity: 0 }, '<')
+        .from('.frame2', { opacity: 0 })
+        .to('.txt2', { opacity: 1 }, '<')
+        .to('.leaf', { y: 70, repeat: 1, yoyo: true, ease: 'none' }, '-=1')
+        .to('.cta', { display: 'block', opacity: 1, delay: 0.2 });
 
       // exit and link to banner
       document.querySelector('#banner').addEventListener('click', exit);

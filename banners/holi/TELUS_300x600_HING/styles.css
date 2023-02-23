@@ -13,7 +13,7 @@ body {
   overflow: hidden;
   cursor: pointer;
   width: 300px;
-  height: 250px;
+  height: 600px;
   border: 1px solid #000;
   background: #f4f4f7;
   position: relative;
@@ -32,41 +32,41 @@ body {
 .svg,
 .frame {
   width: 300px;
-  height: 250px;
+  height: 600px;
 }
 
 .logo {
-  width: 120px;
-  height: 25px;
-  right: 25px;
-  top: 20px;
+  width: 140px;
+  height: 27px;
+  right: 23px;
+  top: 22px;
 }
 
 /* ----- BACKGROUND ----- */
 .splash {
-  width: 280px;
+  width: 310px;
 }
 
 .splash.left {
-  top: -95px;
-  left: -135px;
+  top: -88px;
+  left: -140px;
 }
 
 .splash.right {
-  bottom: -32px;
-  right: -80px;
-  transform: rotate(-25deg);
+  bottom: -65px;
+  right: -85px;
+  transform: rotate(-35deg);
 }
 
 /* ----- FRAME ----- */
 .overlay {
   width: 252px;
-  height: 160px;
-  top: 62px;
+  height: 510px;
+  top: 65px;
   left: 23px;
   padding: 4px;
   box-sizing: border-box;
-  background: linear-gradient(130deg, #0f8b3f, #63ca02);
+  background: linear-gradient(90deg, #0f8b3f, #63ca02);
   animation: gradient 2s infinite;
   overflow: hidden;
   position: relative;
@@ -101,7 +101,7 @@ body {
 }
 
 .leaf {
-  width: 160px;
+  width: 222px;
   bottom: 0;
   right: -10px;
   z-index: 999;
@@ -112,7 +112,7 @@ body {
     transform: rotate(45deg) translateX(0);
   }
   100% {
-    transform: rotate(45deg) translateX(400px);
+    transform: rotate(45deg) translateX(700px);
   }
 }
 
@@ -126,8 +126,8 @@ body {
 .cta-bg {
   width: 73px;
   height: 20px;
-  top: 74%;
-  left: 36px;
+  bottom: 42px;
+  left: 45px;
   border-radius: 15px;
   background: #248700;
   border: 1px solid #248700;

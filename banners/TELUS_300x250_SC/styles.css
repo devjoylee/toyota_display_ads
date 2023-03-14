@@ -49,6 +49,13 @@ body {
   right: 2px;
 }
 
+.frame3 .tv {
+  width: 280px;
+  object-fit: contain;
+  bottom: -9px;
+  left: 9px;
+}
+
 /* ----- CTA Button ----- */
 .cta {
   display: none;

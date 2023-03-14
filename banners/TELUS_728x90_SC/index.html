@@ -58,8 +58,7 @@
         .to('.frame2', { duration: 0.1, opacity: 0, ease: 'none', delay: 2 })
         .to('.animal', { display: 'none' }, '-=0.6')
         .from('.frame3', { opacity: 0 })
-        .from('.frame3 .terms', { opacity: 0 })
-        .to('.cta', { display: 'block', opacity: 1 }, '<');
+        .to('.cta', { display: 'block', opacity: 1 });
 
       // exit and link to banner
       document.querySelector('#banner').addEventListener('click', exit);

@@ -40,30 +40,56 @@ footer p {
 }
 
 .container {
-  max-width: 860px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 100px 20px 50px;
+  padding: 100px 20px 80px;
 }
 
-.section {
+.region {
   display: grid;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: repeat(3, 200px);
   grid-gap: 20px;
   position: relative;
 }
 
-.section + .section {
-  margin-top: 80px;
+.region + .region {
+  margin-top: 150px;
 }
 
-.section h2 {
+.region h2 {
   margin-bottom: 10px;
-  font-size: 22px;
-  top: -45px;
+  font-size: 33px;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
   position: absolute;
 }
 
-.item {
+.region h2::before,
+.region h2::after {
+  content: '';
+  background-color: #d1d1d1;
+  width: 350px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+}
+
+.region h2::before {
+  right: 120%;
+}
+
+.region h2::after {
+  left: 120%;
+}
+
+.part h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.box {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
   border-radius: 8px;
   padding: 20px 35px;
@@ -72,15 +98,19 @@ footer p {
   cursor: pointer;
 }
 
-.item:hover {
-  margin: -5px;
-  padding: 25px 40px;
+.box:hover {
+  margin: -3px;
+  padding: 23px 38px;
 }
 
 dt {
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
+}
+
+dd + dt {
+  margin-top: 20px;
 }
 
 dd {
@@ -94,10 +124,10 @@ dd {
   .container {
     padding-top: 70px;
   }
-  .section {
+  .region {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .item {
+  .box {
     padding: 20px;
   }
 }
@@ -106,13 +136,13 @@ dd {
   .container {
     margin: 0;
   }
-  .section {
+  .region {
     grid-template-columns: 1fr 1fr;
   }
-  .item {
+  .box {
     padding: 20px 15px;
   }
-  .item:hover {
+  .box:hover {
     padding: 25px 20px;
   }
   dt {
@@ -124,7 +154,7 @@ dd {
 }
 
 @media screen and (max-width: 320px) {
-  .section {
+  .region {
     grid-gap: 10px;
     grid-template-columns: 1fr;
   }

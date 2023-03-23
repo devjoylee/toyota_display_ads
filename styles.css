@@ -40,14 +40,14 @@ footer p {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 100px 20px 80px;
 }
 
 .region {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(4, 200px);
   grid-gap: 20px;
   position: relative;
 }

@@ -1,0 +1,97 @@
+.copy1,
+.copy2,
+.copy3,
+.cta,
+.parts-final,
+.region {
+  background-image: url(assets/sprites.png);
+  background-position: 0 0;
+  width: 728px;
+  height: 90px;
+  background-size: 728px 540px;
+}
+.copy2,
+.copy3,
+.cta,
+.parts-final,
+.region {
+  background-position: 0 -90px;
+}
+.copy3,
+.cta,
+.parts-final,
+.region {
+  background-position: 0 -180px;
+}
+.cta,
+.parts-final,
+.region {
+  background-position: 0 -270px;
+}
+.parts-final,
+.region {
+  background-position: 0 -360px;
+}
+.region {
+  background-position: 0 -450px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#ad,
+.ad-element {
+  position: absolute;
+}
+#ad {
+  display: block;
+  border: 1px solid #000;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+.ad-element {
+  background-repeat: no-repeat;
+}
+.retina-image {
+  display: inline-block;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.retina-image img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+#ad,
+#background1,
+#banner {
+  width: 728px;
+  height: 90px;
+}
+#banner {
+  position: absolute;
+  overflow: hidden;
+  background-color: #ccc;
+  visibility: hidden;
+  left: -1px;
+  top: -1px;
+}
+#background1 {
+  background-image: url(assets/img/background1.jpg);
+  background-size: 100%;
+}
+#background2 {
+  background-image: url(assets/img/background2.jpg);
+  background-size: 100%;
+}
+#background2,
+#frame2 {
+  width: 728px;
+  height: 90px;
+}

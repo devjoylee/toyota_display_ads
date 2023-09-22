@@ -95,6 +95,18 @@ dd {
   line-height: 1.35;
 }
 
+dd a {
+  color: #000;
+}
+
+dd a:visited {
+  color: #999;
+}
+
+.revised a {
+  color: #e40000 !important;
+}
+
 /* ----- tab ---- */
 .tab-inner input {
   display: none;

@@ -107,6 +107,10 @@ dd a:visited {
   color: #e40000 !important;
 }
 
+.bold a {
+  font-weight: bold;
+}
+
 /* ----- tab ---- */
 .tab-inner input {
   display: none;

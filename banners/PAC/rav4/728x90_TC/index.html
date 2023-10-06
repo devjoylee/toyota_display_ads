@@ -48,10 +48,11 @@
 
       <div id="legal-overlay" class="ad-element">
         <p class="legal-text ad-element">
-          * تُطبّق الشروط.
-          <a href="https://www.shoptoyota.ca/ontario/ar/legal" target="_blank">انقر</a> للإطلاع على
-          التفاصيل. قد يفرض الوكيل المحلي رسومًا إضافية تصل إلى 1,221 دولارًا. قد تختلف الرسوم حسب
-          الوكيل.
+          *有若干條件。<a
+            href="https://www.shoptoyota.ca/british-columbia/can/legal"
+            target="_blank"
+            >點擊</a
+          >查看詳情。
         </p>
         <div id="close" class="ad-element"><span></span> <span></span></div>
       </div>
@@ -68,8 +69,8 @@
         .to('.frame1', { alpha: 0 }, '+=2')
         .from('.frame2', { alpha: 0 })
         .to('.frame2', { alpha: 0 }, '+=2')
-        .to('#background', { duration: 1, x: '-=255', ease: 'power1.inOut' }, '<')
-        .to('.vehicle', { duration: 1, x: '-=260', ease: 'power1.inOut' }, '<')
+        .to('#background', { duration: 1, x: '-=250', ease: 'power1.inOut' }, '<')
+        .to('.vehicle', { duration: 1, x: '-=255', ease: 'power1.inOut' }, '<')
         .to('.logo', { y: '+=18', ease: 'power1.inOut' }, '<')
         .from(['.frame3', '#legal-btn'], { alpha: 0 });
 

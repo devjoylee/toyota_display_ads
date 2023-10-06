@@ -96,6 +96,7 @@ dd {
 
 dd a {
   color: #000;
+  cursor: pointer;
 }
 
 dd a:visited {

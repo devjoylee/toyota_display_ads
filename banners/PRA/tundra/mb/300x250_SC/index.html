@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="ad.size" content="width=728,height=90" />
+    <meta name="ad.size" content="width=300,height=250" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
@@ -9,25 +9,25 @@
     <script>
       var clickTag = '';
     </script>
-    <title>PAC_Rav4_728x90_TC</title>
+    <title>PRA_Tundra_MB_300x250_SC</title>
   </head>
   <body>
     <div id="ad">
       <div id="banner">
         <div id="background" class="ad-element">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250">
             <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop
                   id="gradientStart"
-                  offset="60%"
+                  offset="50%"
                   style="stop-color: #ca9284; stop-opacity: 1"
                 />
                 <stop id="gradientEnd" offset="100%" style="stop-color: #f5ceb6; stop-opacity: 1" />
               </linearGradient>
             </defs>
-            <rect width="526" height="100%" fill="url(#gradient)" />
-            <polygon id="sweep" points="526,0 728,0 728,90 422,90" fill="#6c827b" />
+            <rect width="100%" height="196" fill="url(#gradient)" />
+            <polygon id="sweep" points="0,196 300,138 300,250 0,250" fill="#6c827b" />
           </svg>
         </div>
 
@@ -48,11 +48,9 @@
 
       <div id="legal-overlay" class="ad-element">
         <p class="legal-text ad-element">
-          *有若干條件。<a
-            href="https://www.shoptoyota.ca/british-columbia/can/legal"
-            target="_blank"
-            >點擊</a
-          >查看詳情。
+          *有若干条件。<a href="https://www.shoptoyota.ca/manitoba/man/legal" target="_blank"
+            >点击</a
+          >查看详情。
         </p>
         <div id="close" class="ad-element"><span></span> <span></span></div>
       </div>
@@ -69,9 +67,12 @@
         .to('.frame1', { alpha: 0 }, '+=2')
         .from('.frame2', { alpha: 0 })
         .to('.frame2', { alpha: 0 }, '+=2')
-        .to('#background', { duration: 1, x: '-=250', ease: 'power1.inOut' }, '<')
-        .to('.vehicle', { duration: 1, x: '-=255', ease: 'power1.inOut' }, '<')
-        .to('.logo', { y: '+=18', ease: 'power1.inOut' }, '<')
+        .from('#background', { duration: 1, y: '-=22', ease: 'power1.inOut' }, '<')
+        .to(
+          '.vehicle',
+          { duration: 1, scale: 0.75, x: '-=48', y: '-=40', ease: 'power1.inOut' },
+          '<'
+        )
         .from(['.frame3', '#legal-btn'], { alpha: 0 });
 
       // legal modal event

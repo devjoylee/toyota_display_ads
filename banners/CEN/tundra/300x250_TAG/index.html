@@ -1,7 +1,8 @@
 <!-- override global script --><!-- /override global script -->
 <html lang="en">
   <head>
-    <meta name="ad.size" content="width=728,height=90" />
+    <meta charset="UTF-8" />
+    <meta name="ad.size" content="width=300,height=250" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
@@ -9,15 +10,13 @@
     <script>
       var clickTag = '';
     </script>
-    <title>CEN_Tundra_728x90_SC</title>
-    </script>
+    <title>CEN_Tundra_300x250_TAG</title>
   </head>
   <body>
     <div id="ad">
       <!-- main -->
       <div id="banner">
         <div id="background" class="ad-element"></div>
-        <div class="ad-element background-overlay"></div>
         <div class="ad-element copy1"></div>
         <div class="ad-element endframe"></div>
         <div class="ad-element offer"></div>
@@ -36,16 +35,16 @@
     </div>
     <script>
       !(function (e) {
-        function t(r) {
-          if (o[r]) return o[r].exports;
-          var n = (o[r] = { i: r, l: !1, exports: {} });
-          return e[r].call(n.exports, n, n.exports, t), (n.l = !0), n.exports;
+        function t(n) {
+          if (o[n]) return o[n].exports;
+          var r = (o[n] = { i: n, l: !1, exports: {} });
+          return e[n].call(r.exports, r, r.exports, t), (r.l = !0), r.exports;
         }
         var o = {};
         (t.m = e),
           (t.c = o),
-          (t.d = function (e, o, r) {
-            t.o(e, o) || Object.defineProperty(e, o, { enumerable: !0, get: r });
+          (t.d = function (e, o, n) {
+            t.o(e, o) || Object.defineProperty(e, o, { enumerable: !0, get: n });
           }),
           (t.r = function (e) {
             'undefined' != typeof Symbol &&
@@ -56,21 +55,21 @@
           (t.t = function (e, o) {
             if ((1 & o && (e = t(e)), 8 & o)) return e;
             if (4 & o && 'object' == typeof e && e && e.__esModule) return e;
-            var r = Object.create(null);
+            var n = Object.create(null);
             if (
-              (t.r(r),
-              Object.defineProperty(r, 'default', { enumerable: !0, value: e }),
+              (t.r(n),
+              Object.defineProperty(n, 'default', { enumerable: !0, value: e }),
               2 & o && 'string' != typeof e)
             )
-              for (var n in e)
+              for (var r in e)
                 t.d(
-                  r,
                   n,
+                  r,
                   function (t) {
                     return e[t];
-                  }.bind(null, n)
+                  }.bind(null, r)
                 );
-            return r;
+            return n;
           }),
           (t.n = function (e) {
             var o =
@@ -87,9 +86,10 @@
             return Object.prototype.hasOwnProperty.call(e, t);
           }),
           (t.p = ''),
-          t((t.s = 4));
-      })({
-        4: function (e, t, o) {
+          t((t.s = 1));
+      })([
+        ,
+        function (e, t, o) {
           'use strict';
           !(function () {
             function e(e) {
@@ -100,36 +100,35 @@
             }
             document.querySelector('#ad');
             var o = document.querySelector('#banner'),
-              r = {},
-              n = document.querySelector('#legal'),
+              n = {},
+              r = document.querySelector('#legal'),
               a = document.querySelector('#close');
             window.onload = function () {
               var u;
-              (r.width = o.offsetWidth),
-                (r.height = o.offsetHeight),
+              (n.width = o.offsetWidth),
+                (n.height = o.offsetHeight),
                 (o.style.visibility = 'visible'),
-                n.addEventListener('click', e),
+                r.addEventListener('click', e),
                 a.addEventListener('click', t),
                 (u = gsap.timeline()),
-                gsap.set('#background', { x: 0, y: -16, transformOrigin: 'left top' }),
+                gsap.set('#background', { x: -50, y: -36, transformOrigin: 'left top' }),
                 gsap.to('#background', {
                   duration: 3,
-                  scale: 0.959,
-                  x: -132,
-                  y: -19,
+                  scale: 0.91,
+                  x: -62,
+                  y: -8,
                   ease: 'power1.inOut',
                   delay: 1,
                 }),
                 u
-                  .from('.copy1', { alpha: 0 })
+                  .from('.copy1', { alpha: 0 }, '+=.75')
                   .to('.copy1', { alpha: 0 }, '+=2')
-                  .from(['.endframe', '.offer', '#legal', '.background-overlay'], { autoAlpha: 0 })
-                  .to('.region', { y: '+=16' }, '<');
+                  .from(['.endframe', '.offer', '#legal'], { autoAlpha: 0 });
             };
           })();
         },
-      });
-      
+      ]);
+
       // exit and link to banner
       document.querySelector('#banner').addEventListener('click', exit);
       function exit() {

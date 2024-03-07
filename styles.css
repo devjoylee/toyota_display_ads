@@ -11,19 +11,26 @@ body {
   min-height: 100vh;
 }
 
-header h1 {
-  font-size: 35px;
+header {
   text-align: center;
-  letter-spacing: -1px;
-  color: #333;
+  padding: 35px 0 50px;
+}
+
+header img {
+  width: 140px;
 }
 
 header p {
-  padding-top: 50px;
-  text-align: center;
+  margin-bottom: 10px;
   font-size: 14px;
   letter-spacing: -0.5px;
   color: #888;
+}
+
+header h1 {
+  font-size: 35px;
+  letter-spacing: -1px;
+  color: #333;
 }
 
 footer {
@@ -42,17 +49,28 @@ footer p {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 50px 20px 80px;
+  padding: 0 20px 80px;
 }
 
-.region {
+.section {
   display: grid;
   grid-template-columns: repeat(3, 220px);
   grid-gap: 30px;
   position: relative;
 }
 
-.part h3 {
+.section + .section {
+  margin-top: 80px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  top: -45px;
+  position: absolute;
+}
+
+.column h3 {
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -60,8 +78,7 @@ footer p {
 .box {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
   border-radius: 8px;
-  padding: 20px 35px;
-  margin-bottom: 20px;
+  padding: 20px 28px;
   background: #fefefe;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -76,7 +93,7 @@ footer p {
 }
 
 .box:hover {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px;
 }
 
 dt {
@@ -87,6 +104,10 @@ dt {
 
 dd + dt {
   margin-top: 20px;
+}
+
+dd + dd {
+  margin-top: 5px;
 }
 
 dd {
@@ -151,12 +172,17 @@ dd a:visited {
 /* ----- //tab ---- */
 
 @media screen and (max-width: 768px) {
+  header {
+    padding-bottom: 40px;
+  }
   header h1 {
     font-size: 28px;
   }
   .container {
-    padding-top: 70px;
     margin: 0 auto;
+  }
+  .section {
+    grid-template-columns: repeat(2, 220px);
   }
   .tab-inner label {
     font-size: 20px;
@@ -165,16 +191,32 @@ dd a:visited {
     cursor: pointer;
   }
   .tab-inner label:nth-of-type(1) {
-    margin-left: 20px;
+    margin-left: 90px;
   }
   .tab-inner label:nth-of-type(2) {
     margin: 0 20px;
   }
-  .region {
-    grid-template-columns: 1fr;
-  }
   .box {
     padding: 20px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container {
+    margin: 0;
+  }
+  .section {
+    grid-gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .column {
+    margin-bottom: 20px;
+  }
+  .tab-inner label:nth-of-type(1) {
+    margin-left: 0px;
+  }
+  .box {
+    padding: 20px 15px;
   }
   dt {
     font-size: 18px;

@@ -1,0 +1,85 @@
+.copy1 {
+  background-position: 0 0;
+  width: 728px;
+  height: 90px;
+}
+.copy1,
+.copy2,
+.cta {
+  background-image: url(assets/sprites.png);
+  background-size: 728px 360px;
+}
+.copy2 {
+  width: 728px;
+  height: 90px;
+  background-position: 0 -90px;
+}
+.cta {
+  background-position: 0 -180px;
+}
+#ad,
+#banner,
+.cta,
+.region {
+  width: 728px;
+  height: 90px;
+}
+.region {
+  background-image: url(assets/sprites.png);
+  background-position: 0 -270px;
+  background-size: 728px 360px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#ad,
+#banner {
+  position: absolute;
+  overflow: hidden;
+}
+#ad {
+  display: block;
+  border: 1px solid #000;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+}
+.ad-element {
+  position: absolute;
+  background-repeat: no-repeat;
+}
+.retina-image {
+  display: inline-block;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.retina-image img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+#banner {
+  background-color: #ccc;
+  visibility: hidden;
+  left: -1px;
+  top: -1px;
+}
+#scene1,
+#scene2 {
+  background-size: 100%;
+  width: 728px;
+  height: 90px;
+}
+#scene1 {
+  -webkit-transform-origin: 15% center;
+  transform-origin: 15% center;
+  background-image: url(assets/img/scene1.jpg);
+}
+#scene2 {
+  background-image: url(assets/img/scene2.jpg);
+}

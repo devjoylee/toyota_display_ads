@@ -254,7 +254,7 @@
       height: auto;
     }
     #vehicleNameplate {
-      font-family: toyota-font;
+      font-family: sans-serif;
       font-size: 5.5px;
       text-transform: uppercase;
       color: #fff;
@@ -425,12 +425,14 @@
       bottom: 8px;
     }
     #legalRollover {
-      color: #9b9999;
+      color: #ccc;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 6.5px;
       cursor: pointer;
-      left: 8px;
-      top: 8px;
+      top: unset !important;
+      left: unset !important;
+      right: 8px;
+      bottom: 8px;
     }
     .toyota-type {
       font-family: toyota-font;
@@ -980,27 +982,6 @@
           !(function () {
             function e() {
               hoxton.exit('Exit', _exitURL);
-            }
-            function t(e) {
-              e.stopPropagation(),
-                gsap.to('#legal-overlay', {
-                  duration: 0.25,
-                  autoAlpha: 1,
-                  onStart: function () {
-                    a.style.display = 'block';
-                  },
-                }),
-                hoxton.timeline.pause();
-            }
-            function o(e) {
-              gsap.to('#legal-overlay', {
-                duration: 0.25,
-                autoAlpha: 0,
-                onComplete: function () {
-                  a.style.display = 'none';
-                },
-              }),
-                hoxton.timeline.play();
             }
             var n = document.querySelector('#banner'),
               r = document.querySelector('#banner'),

@@ -254,13 +254,13 @@
       height: auto;
     }
     #vehicleNameplate {
-      font-family: toyota-font;
+      font-family: sans-serif;
       font-size: 5.5px;
       text-transform: uppercase;
       color: #fff;
       line-height: 1.25em;
       right: 8px;
-      top: 194px;
+      top: 198px;
     }
     #offerNameplate {
       font-size: 10px;
@@ -425,12 +425,14 @@
       bottom: 8px;
     }
     #legalRollover {
-      color: #9b9999;
+      color: #ccc;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 6.5px;
       cursor: pointer;
-      left: 8px;
-      top: 8px;
+      top: unset !important;
+      left: unset !important;
+      right: 8px;
+      bottom: 8px;
     }
     .toyota-type {
       font-family: toyota-font;
@@ -478,20 +480,6 @@
               class="ad-element text-align-center"
               style="visibility: visible; font-family: MHeiPRC-Xbold; font-weight: 400"
             ></div>
-            <div
-              id="offer-container"
-              class="ad-element flexbox flex-column flex-vertical-align-middle flex-horizontal-align-center"
-            >
-              <div>
-                <div
-                  id="offerNameplate"
-                  class="text-align-center"
-                  style="visibility: visible"
-                ></div>
-                <div id="offerBlocks" style="visibility: visible"></div>
-                <div id="additionalOfferCopy" style="visibility: visible"></div>
-              </div>
-            </div>
           </div>
         </div>
         <div
@@ -512,7 +500,6 @@
           class="ad-element text-align-right"
           style="visibility: visible"
         ></div>
-        <img id="regionLogo" class="ad-element" src alt style="visibility: visible" />
       </div>
       <div
         id="legalRollover"
@@ -995,27 +982,6 @@
           !(function () {
             function e() {
               hoxton.exit('Exit', _exitURL);
-            }
-            function t(e) {
-              e.stopPropagation(),
-                gsap.to('#legal-overlay', {
-                  duration: 0.25,
-                  autoAlpha: 1,
-                  onStart: function () {
-                    a.style.display = 'block';
-                  },
-                }),
-                hoxton.timeline.pause();
-            }
-            function o(e) {
-              gsap.to('#legal-overlay', {
-                duration: 0.25,
-                autoAlpha: 0,
-                onComplete: function () {
-                  a.style.display = 'none';
-                },
-              }),
-                hoxton.timeline.play();
             }
             var n = document.querySelector('#banner'),
               r = document.querySelector('#banner'),

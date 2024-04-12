@@ -249,7 +249,7 @@
       height: auto;
     }
     #vehicleNameplate {
-      font-family: sans-serif;
+      font-family: futura, sans-serif;
       font-size: 6px;
       text-transform: uppercase;
       color: #fff;
@@ -993,6 +993,13 @@
           })();
         },
       });
+
+      // exit and link to banner
+      var clickTag = '';
+      document.querySelector('#banner').addEventListener('click', exit);
+      function exit() {
+        window.open(clickTag);
+      }
     </script>
   </body>
 </html>

@@ -12,21 +12,21 @@
     type="font/woff"
     crossorigin
   /><style>
-    .tag-wire {
+    .tag-wires {
       background-image: url(assets/spritesheets/copy.png);
       background-position: 0 0;
-      background-size: 600px 250px;
+      background-size: 728px 180px;
     }
     #ad,
     .tag,
-    .tag-wire {
-      width: 300px;
-      height: 250px;
+    .tag-wires {
+      width: 728px;
+      height: 90px;
     }
     .tag {
       background-image: url(assets/spritesheets/copy.png);
-      background-position: -300px 0;
-      background-size: 600px 250px;
+      background-position: 0 -90px;
+      background-size: 728px 180px;
     }
     * {
       box-sizing: border-box;
@@ -124,13 +124,13 @@
       padding: 5px;
       opacity: 0;
       visibility: hidden;
-      width: 300px;
-      height: 250px;
+      width: 728px;
+      height: 90px;
     }
     #legal-overlay > div:first-of-type {
       overflow-y: auto;
-      width: 268px;
-      height: 218px;
+      width: 696px;
+      height: 58px;
       transform: translateX(-50%);
       -webkit-transform: translateX(-50%);
       transform: translateY(-50%);
@@ -188,8 +188,8 @@
     #banner {
       position: absolute;
       overflow: hidden;
-      width: 300px;
-      height: 250px;
+      width: 728px;
+      height: 90px;
       background-color: #f4f4f4;
       visibility: hidden;
       left: -1px;
@@ -201,53 +201,48 @@
     }
     #background,
     #tag-group {
-      width: 300px;
-      height: 250px;
+      width: 728px;
+      height: 90px;
     }
     .tag {
       -webkit-filter: drop-shadow(8px 25px 30px rgba(0, 0, 0, 0.4));
       filter: drop-shadow(8px 25px 30px rgba(0, 0, 0, 0.4));
     }
-    #tag-text {
-      -webkit-transform: rotate(-3.6deg);
-      transform: rotate(-3.6deg);
-      width: 160px;
-      height: 106px;
-      left: 43px;
-      top: 25px;
+    #cta-container {
+      width: 130px;
+      height: 90px;
+      left: 465px;
+      top: 0;
     }
     #headline {
       font-family: toyota-font;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 19px;
       color: #fff;
+      width: 300px;
       line-height: 1em;
-      width: 100%;
-      transform: translateX(-50%);
-      -webkit-transform: translateX(-50%);
+      left: 39px;
+      top: 50%;
       transform: translateY(-50%);
       -webkit-transform: translateY(-50%);
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
     }
     #headline small {
       display: block;
       font-weight: 400;
-      margin-top: 1.2em;
+      margin-top: 0.4em;
       font-size: 0.5em;
       line-height: 1.2em;
     }
-    #logoLarge {
+    #logoLarge,
+    #logoSmall {
       left: 0;
       top: 0;
     }
     #vehicleImage-container {
-      width: 252px;
-      height: 189px;
-      left: 79px;
-      top: 48px;
+      width: 215px;
+      height: 161px;
+      left: 302px;
+      top: -35px;
     }
     #vehicleImage-container img {
       width: 100%;
@@ -255,20 +250,21 @@
     }
     #vehicleNameplate {
       font-family: futura, sans-serif;
-      font-size: 5.5px;
+      font-size: 6px;
       text-transform: uppercase;
       color: #fff;
       line-height: 1.25em;
-      right: 8px;
-      top: 194px;
+      left: 440px;
+      bottom: 6px;
     }
     #offerNameplate {
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 700;
       text-transform: uppercase;
-      line-height: 1em;
-      padding-bottom: 3px;
-      border-bottom: 1px solid #c30619;
+      line-height: 1.2em;
+      padding-right: 4px;
+      margin-right: 4px;
+      border-right: 1px solid #c30619;
     }
     #offerNameplate small {
       font-size: 0.6em;
@@ -276,18 +272,14 @@
       line-height: 1.5em;
     }
     #offer-container {
+      justify-content: space-evenly;
       font-family: toyota-font;
-      font-size: 6.5px;
+      font-size: 6px;
       color: #fff;
-      width: 100%;
-      transform: translateX(-50%);
-      -webkit-transform: translateX(-50%);
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
+      width: 265px;
+      height: 57px;
+      left: 77px;
+      top: 17px;
     }
     .divider,
     .offer-block {
@@ -298,7 +290,7 @@
       align-items: center;
       text-transform: uppercase;
       margin: 0 5px;
-      font-size: 9px;
+      font-size: 7px;
       line-height: 1em;
     }
     .divider > span {
@@ -314,15 +306,12 @@
       content: '';
     }
     #offerBlocks {
-      width: 100%;
       display: flex;
       flex-direction: row;
       align-items: stretch;
-      justify-content: center;
     }
     .offer-block {
       line-height: 1.1em;
-      padding: 3px 0 6px;
     }
     .offer-block p {
       margin: 0;
@@ -364,22 +353,15 @@
     .offer-value sup::before {
       position: absolute;
       content: attr(data-subscript);
-      font-size: 0.475em;
+      font-size: 0.45em;
       text-transform: uppercase;
       top: 50%;
       left: 0;
     }
     #additionalOfferCopy {
-      border-top: 1px solid #c30619;
-    }
-    #additionalOfferCopy .divider {
-      flex-direction: row;
-      margin: 0;
-    }
-    #additionalOfferCopy .divider::after,
-    #additionalOfferCopy .divider::before {
-      height: 1px;
-      width: 100%;
+      padding-left: 4px;
+      margin-left: 4px;
+      border-left: 1px solid #c30619;
     }
     #additionalOfferCopy:empty {
       display: block;
@@ -389,9 +371,9 @@
       text-transform: uppercase;
     }
     .hybrid {
-      display: inline-block;
+      display: block;
       line-height: 1.5em;
-      font-size: 1em;
+      font-size: 1.1em;
     }
     .hybrid::before {
       content: '';
@@ -410,8 +392,6 @@
       font-weight: 700;
       border-color: #fff;
       color: #fff;
-      left: 11px;
-      bottom: 11px;
       padding: 3px 13px 6px;
     }
     #callToAction:empty,
@@ -420,22 +400,24 @@
     }
     #regionLogo {
       width: auto;
-      height: 31px;
-      right: 8px;
-      bottom: 8px;
+      height: 40px;
+      right: 14px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
     #legalRollover {
       color: #9b9999;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 6.5px;
       cursor: pointer;
-      left: 8px;
-      top: 8px;
+      right: 7px;
+      bottom: 4px;
     }
     .toyota-type {
       font-family: toyota-font;
     }</style
-  ><meta name="ad.size" content="width=300,height=250" /><meta
+  ><meta name="ad.size" content="width=728,height=90" /><meta
     http-equiv="Content-Type"
     content="text/html;charset=utf-8"
   />
@@ -445,85 +427,81 @@
   </script>
   <style>
     @font-face {
-      font-family: MHeiHK-Xbold;
-      src: url(assets/m3IszHNZje.ttf);
+      font-family: MHeiPRC-Xbold;
+      src: url(assets/iPGTVmHvuY.ttf);
     }</style
   ><style>
     @font-face {
-      font-family: MHeiHK-Bold;
-      src: url(assets/dLqB3ZOgvH.ttf);
-    }</style
-  ><style>
-    @font-face {
-      font-family: ToyotaType-Black;
-      src: url(assets/OuhKF02Wcp.otf);
+      font-family: MHeiPRC-Bold;
+      src: url(assets/wSv7NbyN38.ttf);
     }
   </style>
   <body style="display: none">
     <hoxton
       style="display: none"
-      data="%257B%2522name%2522%3A%2522TDASR-HXTN-RTD-1.0.3%2522%2C%2522adType%2522%3A%2522HTML5%2522%2C%2522adSize%2522%3A%257B%2522width%2522%3A%2522300%2522%2C%2522height%2522%3A%2522250%2522%257D%2C%2522reportingLabel%2522%3A%2522%257BdocketNumber%257D-rtd-hbo-%257BRegion%257D-%257BContent%257D_%257Bwidth%257Dx%257Bheight%257D_%257Blanguage%257D%2522%2C%2522platform%2522%3A%2522generic%2522%2C%2522backupQuality%2522%3A%252270%2522%2C%2522docketNumber%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522TDASR02595%2522%2C%2522editableGroups%2522%3A%255B%2522Metadata%2522%255D%257D%2C%2522logoLarge%2522%3A%257B%2522type%2522%3A%2522image%2522%2C%2522value%2522%3A%2522assets/rtd-chi-logo-300x250tilted-3Lf6dP6CNr.png%2522%2C%2522editableGroups%2522%3A%255B%2522Campaign%2522%255D%257D%2C%2522headline%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%25E5%2585%25A8%25E6%2596%25B0%25E7%259A%2584%25E5%259C%258B%25E5%25BA%25A6%253Cbr%253E%255Cn%25E7%2586%259F%25E6%2582%2589%25E7%259A%2584%25E5%25A4%25A5%25E4%25BC%25B4%2522%2C%2522editableGroups%2522%3A%255B%2522Headline%2522%255D%257D%2C%2522vehicleImage%2522%3A%257B%2522type%2522%3A%2522image%2522%2C%2522value%2522%3A%2522assets/302639_my20_camry_us_xse_awd_08t7_001-ZjN2ziKgIF.png%2522%2C%2522editableGroups%2522%3A%255B%2522Vehicle%2522%255D%257D%2C%2522vehicleNameplate%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%253Cb%253ECamry%253C/b%253E%2520XSE%2520AWD%2522%2C%2522editableGroups%2522%3A%255B%2522Vehicle%2522%255D%257D%2C%2522offerNameplate%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%25222024%2520Camry%2520%253Csmall%253ESE%2520FWD%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522offerBlocks%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%253Cdiv%2520class%3D%255C%2522offer-block%2520size-2%2520text-align-center%2520v-align-center%255C%2522%253ELease%2520from%253Cspan%2520class%3D%255C%2522offer-value%255C%2522%253E%253Csup%253E%24%253C/sup%253E229%253C/span%253E%253Cspan%2520style%3D%255C%2522white-space%3Anowrap%255C%2522%253Ebiweekly%2520for%252060%2520months%253Csup%253E%25E2%2580%25A0%253C/sup%253E%253C/span%253E%253C/div%253E%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522additionalOfferCopy%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%253Cdiv%2520class%3D%255C%2522offer-block%2520text-align-center%2520v-align-center%255C%2522%253EHYBRID%2520AVAILABLE%253C/div%253E%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522callToAction%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%25E7%25AB%258B%25E5%258D%25B3%25E8%25A8%2582%25E8%25B3%25BC%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522legalRollover%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%25E9%2581%25A9%25E7%2594%25A8%25E6%2596%25BC%25E6%258C%2587%25E5%25AE%259A%25E5%259E%258B%25E8%2599%259F%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522customStyles%2522%3A%257B%2522type%2522%3A%2522css%2522%2C%2522value%2522%3A%2522%23callToAction%2520%257B%255Cnpadding%3A%25204px%252018px%25205px%257D%255Cn%23regionLogo%257B%255Cndisplay%3Anone%257D%255Cn%23legalRollover%257B%255Cnbottom%3A%25208px%3B%255Cnright%3A%25208px%3B%255Cntop%3A%2520unset%2520%21important%3B%255Cnleft%3A%2520unset%2520%21important%3B%257D%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522regionLogo%2522%3A%257B%2522type%2522%3A%2522image%2522%2C%2522value%2522%3A%2522assets/toyotaca-2021-atlantic-3-stack-ko-rgb-epSkKW8ktT.svg%2522%2C%2522editableGroups%2522%3A%255B%2522Region%2522%255D%257D%2C%2522legalText%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%253Csup%253E%25E2%2580%25A0%253C/sup%253EConditions%2520apply.%2520%253Ca%2520target%3D%255C%2522_blank%255C%2522%2520href%3D%255C%2522https%3A//www.shoptoyota.ca/atlantic/en/legal%255C%2522%253EClick%253C/a%253E%2520for%2520details.%2522%2C%2522editableGroups%2522%3A%255B%2522Region%2522%255D%257D%2C%2522hoxtonSettings%2522%3A%257B%2522headline%2522%3A%257B%2522fontFamily%2522%3A%2522assets/m3IszHNZje.ttf%2522%2C%2522fontWeight%2522%3A%2522normal%2522%2C%2522top%2522%3A51%2C%2522fontSize%2522%3A20%2C%2522lineHeight%2522%3A22%257D%2C%2522callToAction%2522%3A%257B%2522fontFamily%2522%3A%2522assets/dLqB3ZOgvH.ttf%2522%2C%2522fontWeight%2522%3A%2522bold%2522%257D%2C%2522vehicleNameplate%2522%3A%257B%2522fontFamily%2522%3A%2522assets/OuhKF02Wcp.otf%2522%2C%2522fontWeight%2522%3A%2522normal%2522%257D%2C%2522legalRollover%2522%3A%257B%2522fontColor%2522%3A%2522%23CCCCCC%2522%2C%2522fontFamily%2522%3A%2522assets/dLqB3ZOgvH.ttf%2522%2C%2522fontWeight%2522%3A%2522normal%2522%2C%2522top%2522%3A4%2C%2522left%2522%3A6%257D%2C%2522vehicleImage%2522%3A%257B%2522top%2522%3A-20%2C%2522left%2522%3A-20%2C%2522width%2522%3A292%257D%2C%2522logoLarge%2522%3A%257B%2522top%2522%3A29%2C%2522left%2522%3A45%2C%2522width%2522%3A150%257D%257D%2C%2522metadata%2522%3A%257B%2522language%2522%3A%2522zh-hk%2522%257D%257D"
+      data="%257B%2522name%2522%3A%2522TDASR-HXTN-RTD-1.0.3%2522%2C%2522adType%2522%3A%2522HTML5%2522%2C%2522adSize%2522%3A%257B%2522width%2522%3A%2522728%2522%2C%2522height%2522%3A%252290%2522%257D%2C%2522reportingLabel%2522%3A%2522%257BdocketNumber%257D-rtd-%257BRegion%257D-%257BContent%257D_%257Bwidth%257Dx%257Bheight%257D_%257Blanguage%257D%2522%2C%2522platform%2522%3A%2522generic%2522%2C%2522backupQuality%2522%3A%252270%2522%2C%2522docketNumber%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522TDASR02595%2522%2C%2522editableGroups%2522%3A%255B%2522Metadata%2522%255D%257D%2C%2522logoLarge%2522%3A%257B%2522type%2522%3A%2522image%2522%2C%2522value%2522%3A%2522assets/rtd-chi-logo-728x90-b5D1MA0JM4.png%2522%2C%2522editableGroups%2522%3A%255B%2522Campaign%2522%255D%257D%2C%2522logoSmall%2522%3A%257B%2522type%2522%3A%2522image%2522%2C%2522value%2522%3A%2522assets/verticle_tag_straight-KAdc9lLXSP.png%2522%2C%2522editableGroups%2522%3A%255B%2522Campaign%2522%255D%257D%2C%2522headline%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%25E5%258A%25A8%25E5%258A%259B%25E6%25BE%258E%25E6%25B9%2583%2520%25E5%258B%2587%25E5%25BE%2580%25E7%259B%25B4%25E5%2589%258D%2520%253Csmall%253E%25E7%2589%25B5%25E5%25BC%2595%25E8%2583%25BD%25E5%258A%259B%25E5%258D%2593%25E8%25B6%258A%253C/small%253E%2522%2C%2522editableGroups%2522%3A%255B%2522Headline%2522%255D%257D%2C%2522vehicleImage%2522%3A%257B%2522type%2522%3A%2522image%2522%2C%2522value%2522%3A%2522assets/354540_my22_tundra_us_1794_edition_8386_06v7_001_ds_front_7_8_2k-qpCbIl3y3h.png%2522%2C%2522editableGroups%2522%3A%255B%2522Vehicle%2522%255D%257D%2C%2522vehicleNameplate%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%253Cb%253ETundra%253C/b%253E%2520CrewMax%2520Platinum%2520L%25201794%2522%2C%2522editableGroups%2522%3A%255B%2522Vehicle%2522%255D%257D%2C%2522offerNameplate%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%25222024%253Cbr%253ECamry%253CBr%253E%253Csmall%253ESE%2520FWD%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522offerBlocks%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%253Cdiv%2520class%3D%255C%2522offer-block%2520size-2%2520text-align-center%2520v-align-center%255C%2522%253ELease%2520from%253Cspan%2520class%3D%255C%2522offer-value%255C%2522%253E%253Csup%253E%24%253C/sup%253E229%253C/span%253E%253Cspan%2520style%3D%255C%2522white-space%3Anowrap%255C%2522%253Ebiweekly%2520for%252060%2520months%253Csup%253E%25E2%2580%25A0%253C/sup%253E%253C/span%253E%253C/div%253E%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522additionalOfferCopy%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%253Cdiv%2520class%3D%255C%2522offer-block%2520text-align-left%2520v-align-center%255C%2522%253EHYBRID%253Cbr%253EAVAILABLE%253C/div%253E%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522callToAction%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%25E7%25AB%258B%25E5%258D%25B3%25E9%2580%2589%25E8%25B4%25AD%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522legalRollover%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%25E9%2580%2582%25E7%2594%25A8%25E4%25BA%258E%25E6%258C%2587%25E5%25AE%259A%25E5%259E%258B%25E5%258F%25B7%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522customStyles%2522%3A%257B%2522type%2522%3A%2522css%2522%2C%2522value%2522%3A%2522%23callToAction%2520%257B%255Cnpadding%3A%25205px%252018px%25204px%257D%255Cn%255Cn%23regionLogo%257B%255Cndisplay%3Anone%257D%2522%2C%2522editableGroups%2522%3A%255B%2522Content%2522%255D%257D%2C%2522regionLogo%2522%3A%257B%2522type%2522%3A%2522image%2522%2C%2522value%2522%3A%2522assets/toyotaca-2021-atlantic-3-stack-ko-rgb-epSkKW8ktT.svg%2522%2C%2522editableGroups%2522%3A%255B%2522Region%2522%255D%257D%2C%2522legalText%2522%3A%257B%2522type%2522%3A%2522text%2522%2C%2522value%2522%3A%2522%253Csup%253E%25E2%2580%25A0%253C/sup%253EConditions%2520apply.%2520%253Ca%2520target%3D%255C%2522_blank%255C%2522%2520href%3D%255C%2522https%3A//www.shoptoyota.ca/atlantic/en/legal%255C%2522%253EClick%253C/a%253E%2520for%2520details.%2522%2C%2522editableGroups%2522%3A%255B%2522Region%2522%255D%257D%2C%2522hoxtonSettings%2522%3A%257B%2522headline%2522%3A%257B%2522fontFamily%2522%3A%2522assets/iPGTVmHvuY.ttf%2522%2C%2522fontWeight%2522%3A%2522normal%2522%2C%2522fontSize%2522%3A21%2C%2522top%2522%3A47%257D%2C%2522callToAction%2522%3A%257B%2522fontFamily%2522%3A%2522assets/wSv7NbyN38.ttf%2522%2C%2522fontWeight%2522%3A%2522bold%2522%2C%2522left%2522%3A130%257D%2C%2522legalRollover%2522%3A%257B%2522fontColor%2522%3A%2522%23CCCCCC%2522%2C%2522fontFamily%2522%3A%2522assets/wSv7NbyN38.ttf%2522%2C%2522fontWeight%2522%3A%2522normal%2522%257D%2C%2522vehicleNameplate%2522%3A%257B%2522left%2522%3A430%257D%2C%2522vehicleImage%2522%3A%257B%2522top%2522%3A-2%2C%2522left%2522%3A-32%2C%2522width%2522%3A215%257D%2C%2522logoLarge%2522%3A%257B%2522top%2522%3A25%2C%2522left%2522%3A33%2C%2522width%2522%3A277%257D%2C%2522logoSmall%2522%3A%257B%2522top%2522%3A14%2C%2522left%2522%3A10%2C%2522width%2522%3A93%257D%257D%2C%2522metadata%2522%3A%257B%2522language%2522%3A%2522zh-cn%2522%257D%257D"
     ></hoxton>
     <div id="ad">
       <div id="banner">
         <div id="background" class="ad-element"></div>
         <div id="tag-group" class="ad-element">
+          <div class="ad-element tag-wires"></div>
           <div class="ad-element tag"></div>
-          <div class="ad-element tag-wire"></div>
           <img
             id="logoLarge"
             class="ad-element"
             src
             alt
-            style="visibility: visible; width: 150px; top: 29px; left: 45px; position: relative"
+            style="visibility: visible; width: 277px; top: 25px; left: 33px; position: relative"
           />
-          <div id="tag-text" class="ad-element">
-            <div
-              id="headline"
-              class="ad-element text-align-center"
-              style="
-                visibility: visible;
-                font-family: MHeiHK-Xbold;
-                font-size: 20px;
-                font-weight: 400;
-                line-height: 22px;
-                top: 51px;
-                position: relative;
-              "
-            ></div>
-          </div>
+          <div
+            id="headline"
+            class="ad-element text-align-center"
+            style="
+              visibility: visible;
+              font-family: MHeiPRC-Xbold;
+              font-size: 21px;
+              font-weight: 400;
+              top: 47px;
+              position: relative;
+            "
+          ></div>
         </div>
         <div
-          id="callToAction"
-          class="ad-element text-align-center"
-          style="visibility: visible; font-family: MHeiHK-Bold; font-weight: 700"
-        ></div>
+          id="cta-container"
+          class="ad-element flexbox flex-column flex-vertical-align-middle flex-horizontal-align-center"
+        >
+          <div
+            id="callToAction"
+            class="text-align-center"
+            style="
+              visibility: visible;
+              font-family: MHeiPRC-Bold;
+              font-weight: 700;
+              left: 130px;
+              position: relative;
+            "
+          ></div>
+        </div>
         <div id="vehicleImage-container" class="ad-element">
           <img
             id="vehicleImage"
             src
             alt
-            style="visibility: visible; width: 292px; top: -20px; left: -20px; position: relative"
+            style="visibility: visible; width: 215px; top: -2px; left: -32px; position: relative"
           />
         </div>
         <div
           id="vehicleNameplate"
-          class="ad-element text-align-right"
-          style="visibility: visible; font-weight: 400"
+          class="ad-element text-align-left"
+          style="visibility: visible; left: 430px; position: relative"
         ></div>
+        <img id="regionLogo" class="ad-element" src alt style="visibility: visible" />
       </div>
       <div
         id="legalRollover"
-        class="ad-element"
-        style="
-          visibility: visible;
-          color: #ccc;
-          font-family: MHeiHK-Bold;
-          font-weight: 400;
-          top: 4px;
-          left: 6px;
-          position: relative;
-        "
+        class="ad-element text-align-right"
+        style="visibility: visible; color: #ccc; font-family: MHeiPRC-Bold; font-weight: 400"
       ></div>
       <div id="legal-overlay" class="ad-element">
         <div id="legalText" class="ad-element" style="visibility: visible"></div>
@@ -987,13 +965,23 @@
             return Object.prototype.hasOwnProperty.call(e, t);
           }),
           (t.p = ''),
-          t((t.s = 2));
+          t((t.s = 8));
       })({
-        2: function (e, t, o) {
+        8: function (e, t, o) {
           'use strict';
           !(function () {
             function e() {
-              hoxton.exit('Exit', _exitURL);
+              hoxton.exit('Exit');
+            }
+            function o(e) {
+              gsap.to('#legal-overlay', {
+                duration: 0.25,
+                autoAlpha: 0,
+                onComplete: function () {
+                  a.style.display = 'none';
+                },
+              }),
+                hoxton.timeline.play();
             }
             var n = document.querySelector('#banner'),
               r = document.querySelector('#banner'),
@@ -1024,13 +1012,6 @@
           })();
         },
       });
-
-      // exit and link to banner
-      var clickTag = '';
-      document.querySelector('#banner').addEventListener('click', exit);
-      function exit() {
-        window.open(clickTag);
-      }
     </script>
   </body>
 </html>

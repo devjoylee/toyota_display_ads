@@ -289,6 +289,11 @@
       transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
     }
+    #endtag {
+      width: 80px;
+      right: 33px;
+      top: 25px;
+    }
     .divider,
     .offer-block {
       display: flex;
@@ -523,6 +528,7 @@
           style="visibility: visible"
         ></div>
         <img id="regionLogo" class="ad-element" src alt style="visibility: visible" />
+        <img id="endtag" class="ad-element" src="assets/Hurry_Ends_Soon_Sticker_ARB.png" alt="" />
       </div>
       <div
         id="legalRollover"
@@ -1053,6 +1059,7 @@
                   .from('#logoLarge', { alpha: 0 })
                   .to('#logoLarge', { alpha: 0 }, '+=1.5')
                   .from('#offer-container', { alpha: 0 })
+                  .from('#endtag', { alpha: 0 }, '<=')
                   .from('#legalRollover', { autoAlpha: 0 }),
                 hoxton.backup && hoxton.timeline.seek(hoxton.timeline.duration(), !1);
             }),

@@ -12,6 +12,14 @@
     type="font/woff"
     crossorigin
   /><style>
+    .offer-value sup {
+      font-family: futura, sans-serif;
+    }
+    #endtag {
+      width: 80px;
+      right: 40px;
+      top: 25px;
+    }
     .tag-wire {
       background-image: url(assets/spritesheets/copy.png);
       background-position: 0 0;
@@ -253,9 +261,13 @@
       width: 100%;
       height: auto;
     }
-    #vehicleNameplate {
+    #vehicleNameplate b {
       font-family: toyota-font;
-      font-size: 5.5px;
+      font-size: 5.3px;
+    }
+    #vehicleNameplate {
+      font-family: 'Arial', sans-serif;
+      font-size: 5px;
       text-transform: uppercase;
       color: #fff;
       line-height: 1.25em;
@@ -405,14 +417,14 @@
       top: 1px;
     }
     #callToAction {
-      font-family: toyota-font;
+      font-family: futura, sans-serif;
+      padding: 4px 13px 4px;
       font-size: 9px;
       font-weight: 700;
       border-color: #fff;
       color: #fff;
       left: 11px;
       bottom: 11px;
-      padding: 3px 13px 6px;
     }
     #callToAction:empty,
     #legalRollover:empty {
@@ -502,6 +514,7 @@
           style="visibility: visible"
         ></div>
         <img id="regionLogo" class="ad-element" src alt style="visibility: visible" />
+        <img id="endtag" class="ad-element" src="assets/Hurry_Ends_Soon_Sticker_FIL.png" alt="" />
       </div>
       <div
         id="legalRollover"
@@ -1019,7 +1032,7 @@
                   .to('#headline', { alpha: 0 }, '+=2')
                   .from('#logoLarge', { alpha: 0 })
                   .to('#logoLarge', { alpha: 0 }, '+=1.5')
-                  .from('#offer-container', { alpha: 0 })
+                  .from(['#endtag', '#offer-container'], { alpha: 0 })
                   .from('#legalRollover', { autoAlpha: 0 }),
                 hoxton.backup && hoxton.timeline.seek(hoxton.timeline.duration(), !1);
             }),

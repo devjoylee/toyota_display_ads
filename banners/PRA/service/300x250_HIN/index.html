@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="ad.size" content="width=300,height=250" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      var clickTag = '';
+    </script>
+    <title>PRA_Service_300x250_HIN</title>
+  </head>
+  <body>
+    <div id="ad">
+      <!-- main -->
+      <div id="banner">
+        <img src="assets/static.png" alt="" />
+      </div>
+
+      <!-- /main -->
+    </div>
+    <script>
+      // exit and link to banner
+      document.querySelector('#banner').addEventListener('click', exit);
+      function exit() {
+        window.open(clickTag);
+      }
+    </script>
+  </body>
+</html>

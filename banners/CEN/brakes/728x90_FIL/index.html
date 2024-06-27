@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="ad.size" content="width=728,height=90" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      var clickTag = '';
+    </script>
+  </head>
+  <body>
+    <div id="ad">
+      <!-- main -->
+      <div id="banner">
+        <img src="assets/static.png" alt="" />
+        <img src="assets/logo.svg" class="logo" alt="" />
+      </div>
+      <div class="legalButton">
+        <img src="assets/legal.png" alt="Legal Information" />
+      </div>
+
+      <div class="legalOverlay">
+        <p class="text">
+          *Parts only – installation extra. Subject to stock availability. Offer subject to change
+          or cancellation without notice. See your Ontario Toyota Dealer for details.
+        </p>
+        <div id="close"><span></span> <span></span></div>
+      </div>
+      <!-- /main -->
+    </div>
+    <script>
+      // show overlay on legal button click
+      document.querySelector('.legalButton').addEventListener('click', function () {
+        document.querySelector('.legalOverlay').style.opacity = '1';
+        document.querySelector('.legalOverlay').style.zIndex = '1';
+      });
+
+      // hide overlay on close button click
+      document.querySelector('#close').addEventListener('click', function () {
+        document.querySelector('.legalOverlay').style.opacity = '0';
+        document.querySelector('.legalOverlay').style.zIndex = '-1';
+      });
+
+      // exit and link to banner
+      document.querySelector('#banner').addEventListener('click', exit);
+      function exit() {
+        window.open(clickTag);
+      }
+    </script>
+  </body>
+</html>

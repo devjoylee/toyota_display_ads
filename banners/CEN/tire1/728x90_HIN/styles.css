@@ -53,6 +53,14 @@ img {
   z-index: -1;
   transition: opacity 0.3s ease;
   cursor: pointer;
+  padding-bottom: 11px;
+}
+
+.legalOverlay p {
+  margin: 0;
+  padding: 15px;
+  overflow: scroll;
+  height: 100%;
 }
 
 .legalOverlay p {

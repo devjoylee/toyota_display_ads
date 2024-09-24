@@ -3,45 +3,57 @@
   <head>
     <style>
       .copy1,
-      .copy2,
-      .cta,
-      .instock-overlay {
+      .copy2 {
         background-image: url(assets/spritesheets/copy.png);
-        background-position: 0 0;
-        width: 300px;
-        height: 250px;
         background-size: 900px 750px;
       }
+      .copy1 {
+        width: 300px;
+        height: 250px;
+        background-position: 0 0;
+      }
+      .copy2 {
+        background-position: -300px 0;
+      }
       .copy2,
       .cta,
       .instock-overlay {
-        background-position: -300px 0;
+        width: 300px;
+        height: 250px;
       }
-      .cta,
-      .instock-overlay {
+      .cta {
+        background-image: url(assets/spritesheets/copy.png);
+        background-size: 900px 750px;
         background-position: 0 -250px;
       }
       .instock-overlay {
         background-position: -300px -250px;
       }
-      .instock {
-        background-position: -600px 0;
-        width: 300px;
-        height: 250px;
-      }
       .instock,
-      .ittt,
-      .logo {
+      .instock-overlay,
+      .ittt {
         background-image: url(assets/spritesheets/copy.png);
         background-size: 900px 750px;
       }
-      .ittt {
+      .instock {
         width: 300px;
         height: 250px;
+        background-position: -600px 0;
+      }
+      .ittt {
         background-position: -600px -250px;
       }
+      #ad,
+      #banner,
+      .ittt,
       .logo {
+        width: 300px;
+        height: 250px;
+      }
+      .logo {
+        background-image: url(assets/spritesheets/copy.png);
         background-position: 0 -500px;
+        background-size: 900px 750px;
       }
       * {
         box-sizing: border-box;
@@ -55,19 +67,16 @@
         padding: 0;
       }
       #ad,
-      #legal-overlay,
-      .logo {
-        width: 300px;
-        height: 250px;
+      #banner {
+        position: absolute;
+        overflow: hidden;
       }
       #ad {
         display: block;
         border: 1px solid #000;
-        overflow: hidden;
-        position: absolute;
+        cursor: pointer;
         left: 0;
         top: 0;
-        cursor: pointer;
       }
       .ad-element {
         position: absolute !important;
@@ -84,86 +93,23 @@
         height: auto;
         pointer-events: none;
       }
-      #legal-overlay {
-        box-sizing: border-box;
-        background-color: #fff;
-        color: #505457;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 9px;
-        font-weight: 300;
-        padding: 5px;
-        opacity: 0;
-        visibility: hidden;
-      }
-      #legal-overlay > div:first-of-type {
-        overflow-y: auto;
-        width: 268px;
-        height: 218px;
-        transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-      }
-      #legal-overlay sup,
-      sup {
-        line-height: 0.25em;
-        font-size: 0.7em;
-      }
-      #close {
-        display: block;
-        background-color: #000;
-        top: 0;
-        left: 0;
-        width: 12px;
-        height: 12px;
-      }
-      #close::after,
-      #close::before {
-        content: '';
-        position: absolute;
-        display: block;
-        background-color: #fff;
-        -webkit-transform-origin: 50% 50%;
-        transform-origin: 50% 50%;
-        width: 9px;
-        height: 1px;
-        left: 1px;
-        top: 5px;
-      }
-      #close::before {
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-      #close::after {
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-      }
       #banner {
-        position: absolute;
-        overflow: hidden;
-        width: 300px;
-        height: 250px;
         background-color: #ccc;
         visibility: hidden;
         left: -1px;
         top: -1px;
       }
-      #background {
+      #background,
+      #rain {
         background-image: url(assets/background.jpg);
         background-size: 100%;
-        width: 335px;
+        width: 300px;
         height: 250px;
       }
-      #legal {
-        cursor: pointer;
-        left: 0;
-        top: 0;
-        width: 35px;
-        height: 15px;
+      #rain {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        background-image: url(assets/rain.png);
       }
     </style>
     <meta name="ad.size" content="width=300,height=250" />
@@ -195,6 +141,7 @@
       <!-- main -->
       <div id="banner">
         <div id="background" class="ad-element"></div>
+        <div id="rain" class="ad-element"></div>
         <div class="ad-element instock"></div>
         <div class="ad-element instock-overlay"></div>
         <div class="ad-element copy1"></div>
@@ -202,15 +149,6 @@
         <div class="ad-element ittt"></div>
         <div class="ad-element cta"></div>
         <div class="ad-element logo"></div>
-      </div>
-      <div id="legal" class="ad-element"></div>
-      <div id="legal-overlay" class="ad-element">
-        <div class="ad-element">
-          *ਸ਼ਰਤਾਂ ਲਾਗੂ ਹਨ। ਵੇਰਵਿਆਂ ਲਈ
-          <a target="_blank" href="https://www.shoptoyota.ca/british-columbia/pa/legal">ਕਲਿੱਕ</a>
-          ਕਰੋ।
-        </div>
-        <div id="close" class="ad-element"><span></span> <span></span></div>
       </div>
       <!-- /main -->
     </div>
@@ -267,38 +205,49 @@
             return Object.prototype.hasOwnProperty.call(e, t);
           }),
           (t.p = ''),
-          t((t.s = 0));
+          t((t.s = 1));
       })([
         function (e, t, o) {
           'use strict';
+          Object.defineProperty(t, '__esModule', { value: !0 }),
+            (t.default = function (e, t, o) {
+              var n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : 0,
+                r = arguments.length > 4 && void 0 !== arguments[4] && arguments[4],
+                u = document.querySelector(e),
+                i = u.clientHeight * t;
+              gsap.to(u, {
+                duration: o,
+                backgroundPosition: '0px -' + i + 'px',
+                ease: 'steps(' + t + ')',
+                repeat: n,
+                yoyo: r,
+              });
+            });
+        },
+        function (e, t, o) {
+          'use strict';
+          var n,
+            r = (n = o(0)) && n.__esModule ? n : { default: n };
           !(function () {
-            function e(e) {
-              e.stopPropagation(), gsap.to('#legal-overlay', { duration: 0.25, autoAlpha: 1 });
-            }
-            function t(e) {
-              gsap.to('#legal-overlay', { duration: 0.25, autoAlpha: 0 });
-            }
-            document.querySelector('#ad');
-            var o = document.querySelector('#banner'),
-              n = {},
-              r = document.querySelector('#legal'),
-              a = document.querySelector('#close');
+            function e() {}
+            function t() {}
+            var o = document.querySelector('#ad'),
+              n = document.querySelector('#banner'),
+              u = {};
             window.onload = function () {
-              var i;
-              (n.width = o.offsetWidth),
-                (n.height = o.offsetHeight),
-                (o.style.visibility = 'visible'),
-                r.addEventListener('click', e),
-                a.addEventListener('click', t),
-                (i = gsap.timeline()),
-                gsap.set(['.instock', '.instock-overlay'], { alpha: 0 }),
-                i
-                  .from('.copy1', { alpha: 0 })
+              (u.width = n.offsetWidth),
+                (u.height = n.offsetHeight),
+                (n.style.visibility = 'visible'),
+                o.addEventListener('mouseover', e),
+                o.addEventListener('mouseout', t),
+                gsap
+                  .timeline()
+                  .call(r.default, ['#rain', 2, 0.2, -1, !0])
+                  .from(['.copy1', '.copy2'], { alpha: 0 })
                   .to('.copy1', { alpha: 0 }, '+=2')
-                  .to('#background', { x: '-=35' }, '<')
-                  .set(['.instock', '.instock-overlay'], { alpha: 1 })
-                  .from(['.ittt', '.copy2'], { alpha: 0 })
+                  .from('.ittt', { alpha: 0 })
                   .from('.instock', { y: '+=60', ease: 'back.out' })
+                  .to('.copy2', { y: '-=31' }, '+=1')
                   .from('.cta', { alpha: 0 }, '<');
             };
           })();

@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="ad.size" content="width=728,height=90" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      var clickTag = '';
+    </script>
+  </head>
+  <body>
+    <div id="ad">
+      <!-- main -->
+      <div id="banner">
+        <img src="assets/static.png" alt="" />
+      </div>
+      <div class="legalButton">
+        <img src="assets/legal.png" alt="Legal Information" />
+      </div>
+
+      <div class="legalOverlay">
+        <p class="text">
+          *Complete tire packages available at participating dealers. **Conditions apply. Should you
+          find a lower Canadian advertised price or Canadian internet quote on tires within thirty
+          (30) days before or after the purchase of qualifying tires from a participating Canadian
+          Toyota Dealer, present the Toyota dealer where you purchased or intend to purchase
+          qualifying tires with proof of the Canadian advertised price or Canadian internet quote.
+          They will verify the price and that the item is in stock and available for immediate sale
+          and delivery, and then match the lower price. Canadian advertised or Canadian internet
+          quotes are eligible from local tire retailers only within an 80km radius of your
+          dealership’s location. “Price Match” DOES NOT apply to advertising errors or misprints,
+          sale pricing, Boxing Day prices, special educational prices, restricted offers, mail order
+          offers, competitor rebates, coupons, premiums, free or bonus offers, limited or minimum
+          quantity or limited time offers, close-outs, liquidations, clearances, financing offers
+          and 3 for 1 offers. Offer does not apply to advertised prices or internet quotes from
+          outside Canada, online retailers, liquidators, commercial or fleet accounts, clearance
+          houses or other sellers that do not install tires do not qualify. Handwritten or verbal
+          estimates/quotes will not be considered. Subject to stock availability. Advertised item
+          must be an in-stock brand sold by the Toyota Tire Centre and be the same size, model,
+          sidewall, speed and load rating. Qualifying tires must be purchased and installed at a
+          participating Toyota dealer in Canada. Price Match Promise does not apply to costs
+          associated with labour, valve stems, mounting/balancing, disposal fees and taxes. Offer
+          valid from September 18, 2024 to December 31, 2024. Offer valid on the following tire
+          brands: MICHELIN, BFGOODRICH, UNIROYAL, BRIDGESTONE, FIRESTONE, TOYO, CONTINENTAL,
+          GENERAL, GISLAVID, GOODYEAR, DUNLOP, COOPER, YOKOHAMA, PIRELLI, HANKOOK, LAUFENN and
+          FALKEN. Offer subject to change or cancellation without notice.
+        </p>
+        <div id="close"><span></span> <span></span></div>
+      </div>
+      <!-- /main -->
+    </div>
+    <script>
+      // show overlay on legal button click
+      document.querySelector('.legalButton').addEventListener('click', function () {
+        document.querySelector('.legalOverlay').style.opacity = '1';
+        document.querySelector('.legalOverlay').style.zIndex = '1';
+      });
+
+      // hide overlay on close button click
+      document.querySelector('#close').addEventListener('click', function () {
+        document.querySelector('.legalOverlay').style.opacity = '0';
+        document.querySelector('.legalOverlay').style.zIndex = '-1';
+      });
+
+      // exit and link to banner
+      document.querySelector('#banner').addEventListener('click', exit);
+      function exit() {
+        window.open(clickTag);
+      }
+    </script>
+  </body>
+</html>

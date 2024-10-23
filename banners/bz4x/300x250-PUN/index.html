@@ -1,258 +1,52 @@
-<!-- override global script --><!-- /override global script -->
+<!-- override global script -->
+<!-- /override global script -->
+
 <html lang="en">
-  <head>
-    <style>
-      .copy1,
-      .copy2 {
-        background-image: url(assets/spritesheets/copy.png);
-        background-size: 900px 750px;
-      }
-      .copy1 {
-        width: 300px;
-        height: 250px;
-        background-position: 0 0;
-      }
-      .copy2 {
-        background-position: -300px 0;
-      }
-      .copy2,
-      .cta,
-      .instock-overlay {
-        width: 300px;
-        height: 250px;
-      }
-      .cta {
-        background-image: url(assets/spritesheets/copy.png);
-        background-size: 900px 750px;
-        background-position: 0 -250px;
-      }
-      .instock-overlay {
-        background-position: -300px -250px;
-      }
-      .instock,
-      .instock-overlay,
-      .ittt {
-        background-image: url(assets/spritesheets/copy.png);
-        background-size: 900px 750px;
-      }
-      .instock {
-        width: 300px;
-        height: 250px;
-        background-position: -600px 0;
-      }
-      .ittt {
-        background-position: -600px -250px;
-      }
-      #ad,
-      #banner,
-      .ittt,
-      .logo {
-        width: 300px;
-        height: 250px;
-      }
-      .logo {
-        background-image: url(assets/spritesheets/copy.png);
-        background-position: 0 -500px;
-        background-size: 900px 750px;
-      }
-      * {
-        box-sizing: border-box;
-        -webkit-font-smoothing: antialiased;
-        -moz-font-smoothing: antialiased;
-        -o-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      #ad,
-      #banner {
-        position: absolute;
-        overflow: hidden;
-      }
-      #ad {
-        display: block;
-        border: 1px solid #000;
-        cursor: pointer;
-        left: 0;
-        top: 0;
-      }
-      .ad-element {
-        position: absolute !important;
-        background-repeat: no-repeat;
-      }
-      .retina-image {
-        display: inline-block;
-        pointer-events: none;
-        width: 100%;
-        height: 100%;
-      }
-      .retina-image img {
-        width: 100%;
-        height: auto;
-        pointer-events: none;
-      }
-      #banner {
-        background-color: #ccc;
-        visibility: hidden;
-        left: -1px;
-        top: -1px;
-      }
-      #background,
-      #rain {
-        background-image: url(assets/background.jpg);
-        background-size: 100%;
-        width: 300px;
-        height: 250px;
-      }
-      #rain {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-        background-image: url(assets/rain.png);
-      }
-    </style>
-    <meta name="ad.size" content="width=300,height=250" />
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
-    <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
-    <script>
-      var clickTag = '';
-      var clickarea;
 
-      var domReady = function (callback) {
-        document.readyState === 'interactive' || document.readyState === 'complete'
-          ? callback()
-          : document.addEventListener('DOMContentLoaded', callback);
-      };
-
-      domReady(function () {
-        clickarea = document.querySelector('#banner');
-        clickarea.addEventListener('click', exit);
-      });
-
-      function exit() {
-        window.open(clickTag, '_blank');
-      }
-    </script>
-  </head>
-  <body>
-    <div id="ad">
-      <!-- main -->
-      <div id="banner">
-        <div id="background" class="ad-element"></div>
-        <div id="rain" class="ad-element"></div>
-        <div class="ad-element instock"></div>
-        <div class="ad-element instock-overlay"></div>
-        <div class="ad-element copy1"></div>
-        <div class="ad-element copy2"></div>
-        <div class="ad-element ittt"></div>
-        <div class="ad-element cta"></div>
-        <div class="ad-element logo"></div>
-      </div>
-      <!-- /main -->
-    </div>
-    <script>
-      !(function (e) {
-        function t(n) {
-          if (o[n]) return o[n].exports;
-          var r = (o[n] = { i: n, l: !1, exports: {} });
-          return e[n].call(r.exports, r, r.exports, t), (r.l = !0), r.exports;
-        }
-        var o = {};
-        (t.m = e),
-          (t.c = o),
-          (t.d = function (e, o, n) {
-            t.o(e, o) || Object.defineProperty(e, o, { enumerable: !0, get: n });
-          }),
-          (t.r = function (e) {
-            'undefined' != typeof Symbol &&
-              Symbol.toStringTag &&
-              Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
-              Object.defineProperty(e, '__esModule', { value: !0 });
-          }),
-          (t.t = function (e, o) {
-            if ((1 & o && (e = t(e)), 8 & o)) return e;
-            if (4 & o && 'object' == typeof e && e && e.__esModule) return e;
-            var n = Object.create(null);
-            if (
-              (t.r(n),
-              Object.defineProperty(n, 'default', { enumerable: !0, value: e }),
-              2 & o && 'string' != typeof e)
-            )
-              for (var r in e)
-                t.d(
-                  n,
-                  r,
-                  function (t) {
-                    return e[t];
-                  }.bind(null, r)
-                );
-            return n;
-          }),
-          (t.n = function (e) {
-            var o =
-              e && e.__esModule
-                ? function () {
-                    return e.default;
-                  }
-                : function () {
-                    return e;
-                  };
-            return t.d(o, 'a', o), o;
-          }),
-          (t.o = function (e, t) {
-            return Object.prototype.hasOwnProperty.call(e, t);
-          }),
-          (t.p = ''),
-          t((t.s = 1));
-      })([
-        function (e, t, o) {
-          'use strict';
-          Object.defineProperty(t, '__esModule', { value: !0 }),
-            (t.default = function (e, t, o) {
-              var n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : 0,
-                r = arguments.length > 4 && void 0 !== arguments[4] && arguments[4],
-                u = document.querySelector(e),
-                i = u.clientHeight * t;
-              gsap.to(u, {
-                duration: o,
-                backgroundPosition: '0px -' + i + 'px',
-                ease: 'steps(' + t + ')',
-                repeat: n,
-                yoyo: r,
-              });
-            });
-        },
-        function (e, t, o) {
-          'use strict';
-          var n,
-            r = (n = o(0)) && n.__esModule ? n : { default: n };
-          !(function () {
-            function e() {}
-            function t() {}
-            var o = document.querySelector('#ad'),
-              n = document.querySelector('#banner'),
-              u = {};
-            window.onload = function () {
-              (u.width = n.offsetWidth),
-                (u.height = n.offsetHeight),
-                (n.style.visibility = 'visible'),
-                o.addEventListener('mouseover', e),
-                o.addEventListener('mouseout', t),
-                gsap
-                  .timeline()
-                  .call(r.default, ['#rain', 2, 0.2, -1, !0])
-                  .from(['.copy1', '.copy2'], { alpha: 0 })
-                  .to('.copy1', { alpha: 0 }, '+=2')
-                  .from('.ittt', { alpha: 0 })
-                  .from('.instock', { y: '+=60', ease: 'back.out' })
-                  .to('.copy2', { y: '-=31' }, '+=1')
-                  .from('.cta', { alpha: 0 }, '<');
+<head>
+    <link rel="stylesheet" href="banner.css">
+    <meta name="ad.size" content="width=300,height=250">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+        <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>        <script>
+            var clickTag = "";
+            var clickarea;
+        
+            var domReady = function (callback) {
+                document.readyState === "interactive" || document.readyState === "complete"
+                    ? callback()
+                    : document.addEventListener("DOMContentLoaded", callback);
             };
-          })();
-        },
-      ]);
-    </script>
-  </body>
+        
+            domReady(function () {
+                clickarea = document.querySelector("#banner");
+                clickarea.addEventListener("click", exit);
+            });
+        
+            function exit() {
+                window.open(clickTag, "_blank");
+            }
+        </script></head>
+
+<body>
+    <div id="ad">
+        <!-- main -->
+        <div id="banner">
+        
+            <div id="background" class="ad-element"></div>
+            <div class="ad-element fog"></div>
+        
+            <div class="ad-element copy1"></div>
+            <div class="ad-element copy2"></div>
+            
+            <div class="ad-element ittt"></div>
+            <div class="ad-element cta"></div>
+            <div class="ad-element logo"></div>
+            
+        </div>
+        <!-- /main -->
+    </div>
+    <script src="banner.js"></script>
+</body>
+
 </html>

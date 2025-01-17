@@ -1,17 +1,343 @@
-<!-- override global script --><!-- /override global script --><html lang="en"><head><style>.copy1{background-position:0 0;background-size:728px 540px}.copy1,.copy2,.copy3{width:728px;height:90px}.copy2{background-size:728px 540px;background-position:0 -90px}.copy3{background-position:0 -180px}.copy3,.cta,.parts-final{background-size:728px 540px}.cta{width:728px;height:90px;background-position:0 -270px}.parts-final{background-position:0 -360px}#ad,#banner,.parts-final,.region{width:728px;height:90px}.region{background-position:0 -450px;background-size:728px 540px}*{box-sizing:border-box}body{margin:0;padding:0}#ad,#banner{position:absolute;overflow:hidden}#ad{display:block;border:1px solid #000;cursor:pointer;left:0;top:0}.ad-element{position:absolute;background-repeat:no-repeat}.retina-image{display:inline-block;pointer-events:none;width:100%;height:100%}.retina-image img{width:100%;height:auto;pointer-events:none}#banner{background-color:#ccc;visibility:hidden;left:-1px;top:-1px}#background1{background-image:url(assets/background1.jpg);background-size:100%}#background1,#frame2{width:728px;height:90px}</style><meta name="ad.size" content="width=728,height=90"><meta http-equiv="Content-Type" content="text/html;charset=utf-8"><script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script><script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script><script>var clickTag = "";
-            var clickarea;
-        
-            var domReady = function (callback) {
-                document.readyState === "interactive" || document.readyState === "complete"
-                    ? callback()
-                    : document.addEventListener("DOMContentLoaded", callback);
+<!-- override global script --><!-- /override global script -->
+<html lang="en">
+  <head>
+    <style>
+      .copy1,
+      .copy2 {
+        background-size: 728px 540px;
+      }
+      .copy1 {
+        width: 728px;
+        height: 90px;
+        background-position: 0 0;
+      }
+      .copy2 {
+        background-position: 0 -90px;
+      }
+      .copy2,
+      .copy3,
+      .cta {
+        width: 728px;
+        height: 90px;
+      }
+      .copy3 {
+        background-size: 728px 540px;
+        background-position: 0 -180px;
+      }
+      .cta {
+        background-position: 0 -270px;
+      }
+      .cta,
+      .parts-final,
+      .region {
+        background-size: 728px 540px;
+      }
+      .parts-final {
+        width: 728px;
+        height: 90px;
+        background-position: 0 -360px;
+      }
+      .region {
+        background-position: 0 -450px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #ad,
+      #legal-overlay,
+      .region {
+        width: 728px;
+        height: 90px;
+      }
+      #ad,
+      .ad-element {
+        position: absolute;
+      }
+      #ad {
+        display: block;
+        border: 1px solid #000;
+        overflow: hidden;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+      }
+      .ad-element {
+        background-repeat: no-repeat;
+      }
+      .retina-image {
+        display: inline-block;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+      }
+      .retina-image img {
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+      }
+      #legal-overlay {
+        box-sizing: border-box;
+        background-color: #fff;
+        color: #505457;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9px;
+        font-weight: 300;
+        padding: 5px;
+        opacity: 0;
+        visibility: hidden;
+      }
+      #legal-overlay > div:first-of-type {
+        overflow-y: auto;
+        pointer-events: none;
+        width: 696px;
+        height: 58px;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+      }
+      #legal-overlay sup,
+      sup {
+        line-height: 0.25em;
+        font-size: 0.7em;
+      }
+      #close {
+        display: block;
+        background-color: #000;
+        top: 0;
+        left: 0;
+        width: 12px;
+        height: 12px;
+      }
+      #close span:first-of-type,
+      #close span:last-of-type {
+        position: absolute;
+        display: block;
+        background-color: #fff;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        width: 9px;
+        height: 1px;
+        left: 1px;
+        top: 5px;
+      }
+      #close span:first-of-type {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      #close span:last-of-type {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      #banner {
+        position: absolute;
+        overflow: hidden;
+        width: 728px;
+        height: 90px;
+        background-color: #ccc;
+        visibility: hidden;
+        left: -1px;
+        top: -1px;
+      }
+      #background1 {
+        background-image: url(assets/background1.jpg);
+        background-size: 100%;
+      }
+      #background1,
+      #frame2 {
+        width: 728px;
+        height: 90px;
+      }
+      #legal {
+        cursor: pointer;
+        left: 6px;
+        top: 6px;
+        width: 21px;
+        height: auto;
+      }
+    </style>
+    <meta name="ad.size" content="width=728,height=90" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
+    <script>
+      var clickTag = '';
+      var clickarea;
+
+      var domReady = function (callback) {
+        document.readyState === 'interactive' || document.readyState === 'complete'
+          ? callback()
+          : document.addEventListener('DOMContentLoaded', callback);
+      };
+
+      domReady(function () {
+        clickarea = document.querySelector('#banner');
+        clickarea.addEventListener('click', exit);
+      });
+
+      function exit() {
+        window.open(clickTag, '_blank');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="ad">
+      <!-- main -->
+      <div id="banner">
+        <div id="background1" class="ad-element"></div>
+        <div id="frame2" class="ad-element">
+          <svg class="ad-element" width="100%" height="100%">
+            <defs>
+              <mask id="mask">
+                <polygon id="maskRect" points="0,0 229,0 249,90 0,90" fill="#ffffff" />
+              </mask>
+            </defs>
+            <g mask="url(#mask)">
+              <image href="assets/scene.jpg" width="100%" height="100%" />
+            </g></svg
+          ><img class="ad-element copy2" src="assets/copy2.png" />
+          <div class="ad-element parts"></div>
+        </div>
+        <img class="ad-element copy1" src="assets/copy1.png" /><img
+          class="ad-element copy3"
+          src="assets/copy3.png"
+        /><img class="ad-element parts-final" src="assets/part.png" /><img
+          class="ad-element cta"
+          src="assets/cta.png"
+        /><img class="ad-element region" src="assets/region.png" />
+      </div>
+      <img id="legal" class="ad-element" src="assets/legal.png" />
+      <div id="legal-overlay" class="ad-element">
+        <div class="ad-element">
+          *Complete tire packages available at participating dealers. Conditions apply. **Price
+          Match Promise +5% (the “Offer”) is only available at participating Toyota dealers in
+          Alberta, Saskatchewan, Manitoba, Cranbrook and Dawson Creek, British Columbia and Kenora,
+          Ontario (the “Prairie Region”). Should you find a lower Canadian advertised price or
+          Canadian internet quote on tires within thirty (30) days before or after the purchase of
+          qualifying tires from a participating Canadian Toyota dealer, present the Toyota dealer
+          where you purchased or intend to purchase qualifying tires with proof of the Canadian
+          advertised price or Canadian internet quote. They will verify the price and that the item
+          is in stock and available for immediate sale and delivery, and then beat the advertised
+          lower price or internet quote by five percent (5%). Canadian advertised or Canadian
+          internet quotes are eligible from local tire retailers only within an 80 km radius of your
+          dealership’s location. “Price Match Promise +5%” DOES NOT apply to advertising errors or
+          misprints, sale pricing, Boxing Day prices, special educational prices, restricted offers,
+          mail order offers, competitor rebates, coupons, premiums, free or bonus offers, limited or
+          minimum quantity or limited time offers, closeouts, liquidations, clearances, financing
+          offers and 3-for-1 offers. Offer does not apply to advertised prices or internet quotes
+          from outside Canada, online retailers, liquidators, commercial or fleet accounts,
+          clearance houses or other sellers that do not install tires do not qualify. Handwritten or
+          verbal estimates/quotes will not be considered. Subject to stock availability. Advertised
+          item must be an in-stock brand sold by the Toyota Tire Centre and be the same size, model,
+          sidewall, speed and load rating. Qualifying tires must be purchased and installed at a
+          participating Toyota dealer in Canada. Price Match Promise +5% does not apply to costs
+          associated with labour, valve stems, mounting/balancing, disposal fees and taxes. Offer
+          valid on the following tire brands: MICHELIN, BFGOODRICH, UNIROYAL, BRIDGESTONE,
+          FIRESTONE, TOYO, CONTINENTAL, GENERAL, GISLAVED, GOODYEAR, DUNLOP, COOPER, YOKOHAMA,
+          PIRELLI, HANKOOK, LAUFENN and FALKEN. Offer subject to change or cancellation without
+          notice.
+        </div>
+        <div id="close" class="ad-element"><span></span> <span></span></div>
+      </div>
+      <!-- /main -->
+    </div>
+    <script>
+      !(function (e) {
+        function t(r) {
+          if (o[r]) return o[r].exports;
+          var n = (o[r] = { i: r, l: !1, exports: {} });
+          return e[r].call(n.exports, n, n.exports, t), (n.l = !0), n.exports;
+        }
+        var o = {};
+        (t.m = e),
+          (t.c = o),
+          (t.d = function (e, o, r) {
+            t.o(e, o) || Object.defineProperty(e, o, { enumerable: !0, get: r });
+          }),
+          (t.r = function (e) {
+            'undefined' != typeof Symbol &&
+              Symbol.toStringTag &&
+              Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
+              Object.defineProperty(e, '__esModule', { value: !0 });
+          }),
+          (t.t = function (e, o) {
+            if ((1 & o && (e = t(e)), 8 & o)) return e;
+            if (4 & o && 'object' == typeof e && e && e.__esModule) return e;
+            var r = Object.create(null);
+            if (
+              (t.r(r),
+              Object.defineProperty(r, 'default', { enumerable: !0, value: e }),
+              2 & o && 'string' != typeof e)
+            )
+              for (var n in e)
+                t.d(
+                  r,
+                  n,
+                  function (t) {
+                    return e[t];
+                  }.bind(null, n)
+                );
+            return r;
+          }),
+          (t.n = function (e) {
+            var o =
+              e && e.__esModule
+                ? function () {
+                    return e.default;
+                  }
+                : function () {
+                    return e;
+                  };
+            return t.d(o, 'a', o), o;
+          }),
+          (t.o = function (e, t) {
+            return Object.prototype.hasOwnProperty.call(e, t);
+          }),
+          (t.p = ''),
+          t((t.s = 4));
+      })({
+        4: function (e, t, o) {
+          'use strict';
+          !(function () {
+            function e(e) {
+              e.stopPropagation(), gsap.to('#legal-overlay', { duration: 0.25, autoAlpha: 1 });
+            }
+            function t(e) {
+              gsap.to('#legal-overlay', { duration: 0.25, autoAlpha: 0 });
+            }
+            document.querySelector('#ad');
+            var o = document.querySelector('#banner'),
+              r = {},
+              n = document.querySelector('#legal'),
+              a = document.querySelector('#close');
+            window.onload = function () {
+              (r.width = o.offsetWidth),
+                (r.height = o.offsetHeight),
+                (o.style.visibility = 'visible'),
+                n.addEventListener('click', e),
+                a.addEventListener('click', t),
+                gsap
+                  .timeline()
+                  .to('.copy1', { alpha: 0 }, '+=2')
+                  .from('.copy2', { alpha: 0 })
+                  .from('.parts', { y: '+=' + r.height }, '<')
+                  .to('#frame2', { alpha: 0 }, '+=2')
+                  .from(['#legal', '.copy3'], { alpha: 0 })
+                  .from('.parts-final', { x: '-=' + r.width / 2 }, '<')
+                  .to('.region', { y: '-=15' }, '+=1')
+                  .from('.cta', { alpha: 0 });
             };
-        
-            domReady(function () {
-                clickarea = document.querySelector("#banner");
-                clickarea.addEventListener("click", exit);
-            });
-        
-            function exit() {
-                window.open(clickTag, "_blank");
-            }</script></head><body><div id="ad"><!-- main --><div id="banner"><div id="background1" class="ad-element"></div><div id="frame2" class="ad-element"><svg class="ad-element" width="100%" height="100%"><defs><mask id="mask"><polygon id="maskRect" points="0,0 228,0 247,90 0,90" fill="#ffffff"/></mask></defs><g mask="url(#mask)"><image href="assets/scene.jpg" width="100%" height="100%"/></g></svg><img class="ad-element copy1" src="assets/copy1.png" /><img class="ad-element copy2" src="assets/copy2.png" /></div><img class="ad-element copy3" src="assets/copy3.png" /><img class="ad-element parts-final" src="assets/part.png" /><img class="ad-element cta" src="assets/cta.png" /><img class="ad-element region" src="assets/region.png" /></div><!-- /main --></div><script>!function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var r={};t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:n})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,r){if(1&r&&(e=t(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)t.d(n,o,function(t){return e[t]}.bind(null,o));return n},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=4)}({4:function(e,t,r){"use strict";!function(){document.querySelector("#ad");var e=document.querySelector("#banner"),t={};window.onload=function(){t.width=e.offsetWidth,t.height=e.offsetHeight,e.style.visibility="visible",gsap.timeline().to(".copy1",{alpha:0},"+=2").from(".copy2",{alpha:0}).from(".parts",{y:"+="+t.height},"<").to("#frame2",{alpha:0},"+=2").from([".copy3"],{alpha:0}).from(".parts-final",{x:"-="+t.width/2},"<").to(".region",{y:"-=15"},"+=1").from(".cta",{alpha:0})}}()}});</script></body></html>
+          })();
+        },
+      });
+    </script>
+  </body>
+</html>

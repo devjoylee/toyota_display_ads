@@ -4,41 +4,44 @@
     <style>
       .copy1,
       .copy2 {
-        background-size: 728px 540px;
+        background-image: url(assets/spritesheets/copy.png);
+        background-size: 900px 500px;
       }
       .copy1 {
-        width: 728px;
-        height: 90px;
+        width: 300px;
+        height: 250px;
         background-position: 0 0;
       }
       .copy2 {
-        background-position: 0 -90px;
+        background-position: -300px 0;
       }
       .copy2,
       .copy3,
       .cta {
-        width: 728px;
-        height: 90px;
+        width: 300px;
+        height: 250px;
       }
       .copy3 {
-        background-size: 728px 540px;
-        background-position: 0 -180px;
+        background-image: url(assets/spritesheets/copy.png);
+        background-size: 900px 500px;
+        background-position: 0 -250px;
       }
       .cta {
-        background-position: 0 -270px;
+        background-position: -300px -250px;
       }
       .cta,
       .parts-final,
       .region {
-        background-size: 728px 540px;
+        background-image: url(assets/spritesheets/copy.png);
+        background-size: 900px 500px;
       }
       .parts-final {
-        width: 728px;
-        height: 90px;
-        background-position: 0 -360px;
+        width: 300px;
+        height: 250px;
+        background-position: -600px 0;
       }
       .region {
-        background-position: 0 -450px;
+        background-position: -600px -250px;
       }
       * {
         box-sizing: border-box;
@@ -50,8 +53,8 @@
       #ad,
       #legal-overlay,
       .region {
-        width: 728px;
-        height: 90px;
+        width: 300px;
+        height: 250px;
       }
       #ad,
       .ad-element {
@@ -92,9 +95,8 @@
       }
       #legal-overlay > div:first-of-type {
         overflow-y: auto;
-        /* pointer-events: none; */
-        width: 696px;
-        height: 58px;
+        width: 268px;
+        height: 218px;
         transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
         transform: translateY(-50%);
@@ -137,11 +139,14 @@
         -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
+      #background1,
+      #banner {
+        width: 300px;
+        height: 250px;
+      }
       #banner {
         position: absolute;
         overflow: hidden;
-        width: 728px;
-        height: 90px;
         background-color: #ccc;
         visibility: hidden;
         left: -1px;
@@ -151,20 +156,24 @@
         background-image: url(assets/background1.jpg);
         background-size: 100%;
       }
-      #background1,
+      #background2 {
+        background-image: url(assets/background2.jpg);
+        background-size: 100%;
+      }
+      #background2,
       #frame2 {
-        width: 728px;
-        height: 90px;
+        width: 300px;
+        height: 250px;
       }
       #legal {
         cursor: pointer;
-        left: 6px;
-        top: 6px;
-        width: 21px;
-        height: auto;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 20px;
       }
     </style>
-    <meta name="ad.size" content="width=728,height=90" />
+    <meta name="ad.size" content="width=300,height=250" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/cssruleplugin_3.5.1_min.js"></script>
@@ -193,54 +202,55 @@
       <!-- main -->
       <div id="banner">
         <div id="background1" class="ad-element"></div>
+        <div id="background2" class="ad-element"></div>
         <div id="frame2" class="ad-element">
           <svg class="ad-element" width="100%" height="100%">
             <defs>
               <mask id="mask">
-                <polygon id="maskRect" points="0,0 229,0 249,90 0,90" fill="#ffffff" />
+                <polygon id="maskRect" points="0,0 300,0 300,142 0,118" fill="#ffffff" />
               </mask>
             </defs>
-            <g mask="url(#mask)">
-              <image href="assets/scene.jpg" width="100%" height="100%" />
-            </g></svg
-          ><img class="ad-element copy2" src="assets/copy2.png" />
-          <div class="ad-element parts"></div>
+            <g mask="url(#mask)"><image href="assets/scene.jpg" width="100%" height="100%" /></g>
+          </svg>
+          <div class="ad-element copy1"></div>
+          <div class="ad-element copy2"></div>
         </div>
-        <img class="ad-element copy1" src="assets/copy1.png" /><img
-          class="ad-element copy3"
-          src="assets/copy3.png"
-        /><img class="ad-element parts-final" src="assets/part.png" /><img
-          class="ad-element cta"
-          src="assets/cta.png"
-        /><img class="ad-element region" src="assets/region.png" />
+        <div class="ad-element copy3"></div>
+        <div class="ad-element parts-final"></div>
+        <div class="ad-element cta"></div>
+        <div class="ad-element region"></div>
       </div>
-      <img id="legal" class="ad-element" src="assets/legal.png" />
+      <div id="legal" class="ad-element"></div>
       <div id="legal-overlay" class="ad-element">
         <div class="ad-element">
-          *Complete tire packages available at participating dealers. **Conditions apply. Should you
-          find a lower Canadian advertised price or Canadian internet quote on tires within thirty
-          (30) days before or after the purchase of qualifying tires from a participating Canadian
-          Toyota dealer, present the Toyota dealer where you purchased or intend to purchase
-          qualifying tires with proof of the Canadian advertised price or Canadian internet quote.
-          They will verify the price and that the item is in stock and available for immediate sale
-          and delivery, and then match the lower price. Canadian advertised or Canadian internet
-          quotes are eligible from local tire retailers only within an 80 km radius of your
-          dealership’s location. “Price Match” DOES NOT apply to advertising errors or misprints,
-          sale pricing, Boxing Day prices, special educational prices, restricted offers, mail order
-          offers, competitor rebates, coupons, premiums, free or bonus offers, limited or minimum
-          quantity or limited time offers, closeouts, liquidations, clearances, financing offers and
-          3-for-1 offers. Offer does not apply to advertised prices or internet quotes from outside
-          Canada, online retailers, liquidators, commercial or fleet accounts, clearance houses or
-          other sellers that do not install tires do not qualify. Handwritten or verbal
-          estimates/quotes will not be considered. <br /><br />
-          Subject to stock availability. Advertised item must be an in-stock brand sold by the
-          Toyota Tire Centre and be the same size, model, sidewall, speed and load rating.
-          Qualifying tires must be purchased and installed at a participating Toyota dealer in
-          Canada. Price Match Promise does not apply to costs associated with labour, valve stems,
-          mounting/balancing, disposal fees and taxes. Offer valid on the following tire brands:
-          MICHELIN, BFGOODRICH, UNIROYAL, BRIDGESTONE, FIRESTONE, TOYO, CONTINENTAL, GENERAL,
-          GISLAVED, GOODYEAR, DUNLOP, COOPER, YOKOHAMA, PIRELLI, HANKOOK, LAUFENN and FALKEN. Offer
-          subject to change or cancellation without notice.
+          <p>
+            *Complete tire packages available at participating dealers. **Conditions apply. Should
+            you find a lower Canadian advertised price or Canadian internet quote on tires within
+            thirty (30) days before or after the purchase of qualifying tires from a participating
+            Canadian Toyota dealer, present the Toyota dealer where you purchased or intend to
+            purchase qualifying tires with proof of the Canadian advertised price or Canadian
+            internet quote. They will verify the price and that the item is in stock and available
+            for immediate sale and delivery, and then match the lower price. Canadian advertised or
+            Canadian internet quotes are eligible from local tire retailers only within an 80 km
+            radius of your dealership’s location. “Price Match” <strong>DOES NOT</strong> apply to
+            advertising errors or misprints, sale pricing, Boxing Day prices, special educational
+            prices, restricted offers, mail order offers, competitor rebates, coupons, premiums,
+            free or bonus offers, limited or minimum quantity or limited time offers, closeouts,
+            liquidations, clearances, financing offers and 3-for-1 offers. Offer does not apply to
+            advertised prices or internet quotes from outside Canada, online retailers, liquidators,
+            commercial or fleet accounts, clearance houses or other sellers that do not install
+            tires do not qualify. Handwritten or verbal estimates/quotes will not be considered.
+          </p>
+          <p>
+            Subject to stock availability. Advertised item must be an in-stock brand sold by the
+            Toyota Tire Centre and be the same size, model, sidewall, speed and load rating.
+            Qualifying tires must be purchased and installed at a participating Toyota dealer in
+            Canada. Price Match Promise does not apply to costs associated with labour, valve stems,
+            mounting/balancing, disposal fees and taxes. Offer valid on the following tire brands:
+            MICHELIN, BFGOODRICH, UNIROYAL, BRIDGESTONE, FIRESTONE, TOYO, CONTINENTAL, GENERAL,
+            GISLAVED, GOODYEAR, DUNLOP, COOPER, YOKOHAMA, PIRELLI, HANKOOK, LAUFENN and FALKEN.
+            Offer subject to change or cancellation without notice.
+          </p>
         </div>
         <div id="close" class="ad-element"><span></span> <span></span></div>
       </div>
@@ -299,9 +309,10 @@
             return Object.prototype.hasOwnProperty.call(e, t);
           }),
           (t.p = ''),
-          t((t.s = 4));
-      })({
-        4: function (e, t, o) {
+          t((t.s = 1));
+      })([
+        ,
+        function (e, t, o) {
           'use strict';
           !(function () {
             function e(e) {
@@ -325,16 +336,16 @@
                   .timeline()
                   .to('.copy1', { alpha: 0 }, '+=2')
                   .from('.copy2', { alpha: 0 })
-                  .from('.parts', { y: '+=' + r.height }, '<')
+                  .from('.parts', { x: '-=' + r.width }, '<')
                   .to('#frame2', { alpha: 0 }, '+=2')
-                  .from(['#legal', '.copy3'], { alpha: 0 })
-                  .from('.parts-final', { x: '-=' + r.width / 2 }, '<')
-                  .to('.region', { y: '-=15' }, '+=1')
-                  .from('.cta', { alpha: 0 });
+                  .to('#maskRect', { y: '-=' + r.height }, '<')
+                  .from(['.copy3', '#background2'], { alpha: 0 })
+                  .from('.parts-final', { x: '+=' + r.width }, '<')
+                  .from('.cta', { alpha: 0 }, '+=1');
             };
           })();
         },
-      });
+      ]);
     </script>
   </body>
 </html>
